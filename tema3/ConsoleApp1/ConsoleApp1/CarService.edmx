@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="Clients" EntityType="Model1.Store.Clients" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sasius" EntityType="Model1.Store.Sasius" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Mecanics" EntityType="Model1.Store.Mecanics" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Autoes" EntityType="Model1.Store.Autoes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Materials" EntityType="Model1.Store.Materials" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Imagines" EntityType="Model1.Store.Imagines" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Operaties" EntityType="Model1.Store.Operaties" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Comandas" EntityType="Model1.Store.Comandas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DetaliuComandas" EntityType="Model1.Store.DetaliuComandas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DetaliuComandaMecanic" EntityType="Model1.Store.DetaliuComandaMecanic" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DetaliuComandaMaterial" EntityType="Model1.Store.DetaliuComandaMaterial" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ComandaOperatie" EntityType="Model1.Store.ComandaOperatie" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="AutoSasiu" Association="Model1.Store.AutoSasiu">
+      <End Role="Auto" EntitySet="Autoes" />
+      <End Role="Sasiu" EntitySet="Sasius" />
+    </AssociationSet>
+    <AssociationSet Name="ComandaClient" Association="Model1.Store.ComandaClient">
+      <End Role="Comanda" EntitySet="Comandas" />
+      <End Role="Client" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="ComandaAuto" Association="Model1.Store.ComandaAuto">
+      <End Role="Comanda" EntitySet="Comandas" />
+      <End Role="Auto" EntitySet="Autoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetaliuComandaMecanic_DetaliuComanda" Association="Model1.Store.FK_DetaliuComandaMecanic_DetaliuComanda">
+      <End Role="DetaliuComanda" EntitySet="DetaliuComandas" />
+      <End Role="DetaliuComandaMecanic" EntitySet="DetaliuComandaMecanic" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetaliuComandaMecanic_Mecanic" Association="Model1.Store.FK_DetaliuComandaMecanic_Mecanic">
+      <End Role="Mecanic" EntitySet="Mecanics" />
+      <End Role="DetaliuComandaMecanic" EntitySet="DetaliuComandaMecanic" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetaliuComandaMaterial_DetaliuComanda" Association="Model1.Store.FK_DetaliuComandaMaterial_DetaliuComanda">
+      <End Role="DetaliuComanda" EntitySet="DetaliuComandas" />
+      <End Role="DetaliuComandaMaterial" EntitySet="DetaliuComandaMaterial" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetaliuComandaMaterial_Material" Association="Model1.Store.FK_DetaliuComandaMaterial_Material">
+      <End Role="Material" EntitySet="Materials" />
+      <End Role="DetaliuComandaMaterial" EntitySet="DetaliuComandaMaterial" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ComandaOperatie_Comanda" Association="Model1.Store.FK_ComandaOperatie_Comanda">
+      <End Role="Comanda" EntitySet="Comandas" />
+      <End Role="ComandaOperatie" EntitySet="ComandaOperatie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ComandaOperatie_Operatie" Association="Model1.Store.FK_ComandaOperatie_Operatie">
+      <End Role="Operatie" EntitySet="Operaties" />
+      <End Role="ComandaOperatie" EntitySet="ComandaOperatie" />
+    </AssociationSet>
+    <AssociationSet Name="DetaliuComandaImagine" Association="Model1.Store.DetaliuComandaImagine">
+      <End Role="DetaliuComanda" EntitySet="DetaliuComandas" />
+      <End Role="Imagine" EntitySet="Imagines" />
+    </AssociationSet>
+    <AssociationSet Name="ComandaDetaliuComanda" Association="Model1.Store.ComandaDetaliuComanda">
+      <End Role="Comanda" EntitySet="Comandas" />
+      <End Role="DetaliuComanda" EntitySet="DetaliuComandas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nume" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Prenume" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Adresa" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Localitate" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="Judet" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="Telefon" Type="smallint" Nullable="false" DefaultValue="13" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sasius">
+    <Key>
+      <PropertyRef Name="SasiuId" />
+    </Key>
+    <Property Name="SasiuId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodSasiu" Type="nvarchar" Nullable="false" MaxLength="2" />
+    <Property Name="Denumire" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="AutoSasiu_Sasiu_AutoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mecanics">
+    <Key>
+      <PropertyRef Name="MecanicId" />
+    </Key>
+    <Property Name="MecanicId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nume" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Prenume" Type="nvarchar" Nullable="false" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Autoes">
+    <Key>
+      <PropertyRef Name="AutoId" />
+    </Key>
+    <Property Name="AutoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumarAuto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SerieSasiu" Type="nvarchar" Nullable="false" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Materials">
+    <Key>
+      <PropertyRef Name="MaterialId" />
+    </Key>
+    <Property Name="MaterialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Denumire" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Cantitate" Type="decimal" Nullable="false" />
+    <Property Name="Pret" Type="decimal" Nullable="false" />
+    <Property Name="DataAprovizionare" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Imagines">
+    <Key>
+      <PropertyRef Name="ImagineId" />
+    </Key>
+    <Property Name="ImagineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titlu" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Descriere" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="Foto" Type="varbinary(max)" Nullable="false" />
+    <Property Name="DetaliuComanda_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Operaties">
+    <Key>
+      <PropertyRef Name="OperatieId" />
+    </Key>
+    <Property Name="OperatieId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Denumire" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="TimpExecutie" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comandas">
+    <Key>
+      <PropertyRef Name="ComandaID" />
+    </Key>
+    <Property Name="ComandaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StareComanda" Type="int" Nullable="false" />
+    <Property Name="DAtaSystem" Type="datetime" Nullable="false" />
+    <Property Name="DataProgramare" Type="datetime" Nullable="false" />
+    <Property Name="DataFinalizare" Type="datetime" Nullable="true" />
+    <Property Name="KmBord" Type="int" Nullable="false" />
+    <Property Name="Descriere" Type="nvarchar" Nullable="false" MaxLength="1024" />
+    <Property Name="ValoarePiese" Type="decimal" Nullable="false" />
+    <Property Name="Client_Id" Type="int" Nullable="false" />
+    <Property Name="Auto_AutoId" Type="int" Nullable="false" />
+    <Property Name="DetaliuComanda_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetaliuComandas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetaliuComandaMecanic">
+    <Key>
+      <PropertyRef Name="DetaliuComandaMecanic_Mecanic_Id" />
+      <PropertyRef Name="Mecanics_MecanicId" />
+    </Key>
+    <Property Name="DetaliuComandaMecanic_Mecanic_Id" Type="int" Nullable="false" />
+    <Property Name="Mecanics_MecanicId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetaliuComandaMaterial">
+    <Key>
+      <PropertyRef Name="DetaliuComandaMaterial_Material_Id" />
+      <PropertyRef Name="Materials_MaterialId" />
+    </Key>
+    <Property Name="DetaliuComandaMaterial_Material_Id" Type="int" Nullable="false" />
+    <Property Name="Materials_MaterialId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ComandaOperatie">
+    <Key>
+      <PropertyRef Name="ComandaOperatie_Operatie_ComandaID" />
+      <PropertyRef Name="Operaties_OperatieId" />
+    </Key>
+    <Property Name="ComandaOperatie_Operatie_ComandaID" Type="int" Nullable="false" />
+    <Property Name="Operaties_OperatieId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="AutoSasiu">
+    <End Role="Auto" Type="Model1.Store.Autoes" Multiplicity="1" />
+    <End Role="Sasiu" Type="Model1.Store.Sasius" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Auto">
+        <PropertyRef Name="AutoId" />
+      </Principal>
+      <Dependent Role="Sasiu">
+        <PropertyRef Name="AutoSasiu_Sasiu_AutoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ComandaClient">
+    <End Role="Comanda" Type="Model1.Store.Comandas" Multiplicity="*" />
+    <End Role="Client" Type="Model1.Store.Clients" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comanda">
+        <PropertyRef Name="Client_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ComandaAuto">
+    <End Role="Comanda" Type="Model1.Store.Comandas" Multiplicity="*" />
+    <End Role="Auto" Type="Model1.Store.Autoes" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Auto">
+        <PropertyRef Name="AutoId" />
+      </Principal>
+      <Dependent Role="Comanda">
+        <PropertyRef Name="Auto_AutoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DetaliuComandaImagine">
+    <End Role="DetaliuComanda" Type="Model1.Store.DetaliuComandas" Multiplicity="0..1" />
+    <End Role="Imagine" Type="Model1.Store.Imagines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DetaliuComanda">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Imagine">
+        <PropertyRef Name="DetaliuComanda_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ComandaDetaliuComanda">
+    <End Role="Comanda" Type="Model1.Store.Comandas" Multiplicity="*" />
+    <End Role="DetaliuComanda" Type="Model1.Store.DetaliuComandas" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="DetaliuComanda">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comanda">
+        <PropertyRef Name="DetaliuComanda_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetaliuComandaMecanic_DetaliuComanda">
+    <End Role="DetaliuComanda" Type="Model1.Store.DetaliuComandas" Multiplicity="1" />
+    <End Role="DetaliuComandaMecanic" Type="Model1.Store.DetaliuComandaMecanic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DetaliuComanda">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DetaliuComandaMecanic">
+        <PropertyRef Name="DetaliuComandaMecanic_Mecanic_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetaliuComandaMecanic_Mecanic">
+    <End Role="DetaliuComandaMecanic" Type="Model1.Store.DetaliuComandaMecanic" Multiplicity="*" />
+    <End Role="Mecanic" Type="Model1.Store.Mecanics" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Mecanic">
+        <PropertyRef Name="MecanicId" />
+      </Principal>
+      <Dependent Role="DetaliuComandaMecanic">
+        <PropertyRef Name="Mecanics_MecanicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetaliuComandaMaterial_DetaliuComanda">
+    <End Role="DetaliuComanda" Type="Model1.Store.DetaliuComandas" Multiplicity="1" />
+    <End Role="DetaliuComandaMaterial" Type="Model1.Store.DetaliuComandaMaterial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DetaliuComanda">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DetaliuComandaMaterial">
+        <PropertyRef Name="DetaliuComandaMaterial_Material_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetaliuComandaMaterial_Material">
+    <End Role="DetaliuComandaMaterial" Type="Model1.Store.DetaliuComandaMaterial" Multiplicity="*" />
+    <End Role="Material" Type="Model1.Store.Materials" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="MaterialId" />
+      </Principal>
+      <Dependent Role="DetaliuComandaMaterial">
+        <PropertyRef Name="Materials_MaterialId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ComandaOperatie_Comanda">
+    <End Role="Comanda" Type="Model1.Store.Comandas" Multiplicity="1" />
+    <End Role="ComandaOperatie" Type="Model1.Store.ComandaOperatie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comanda">
+        <PropertyRef Name="ComandaID" />
+      </Principal>
+      <Dependent Role="ComandaOperatie">
+        <PropertyRef Name="ComandaOperatie_Operatie_ComandaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ComandaOperatie_Operatie">
+    <End Role="ComandaOperatie" Type="Model1.Store.ComandaOperatie" Multiplicity="*" />
+    <End Role="Operatie" Type="Model1.Store.Operaties" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Operatie">
+        <PropertyRef Name="OperatieId" />
+      </Principal>
+      <Dependent Role="ComandaOperatie">
+        <PropertyRef Name="Operaties_OperatieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clients" EntityType="Model1.Client" />
+          <EntitySet Name="Sasius" EntityType="Model1.Sasiu" />
+          <EntitySet Name="Mecanics" EntityType="Model1.Mecanic" />
+          <EntitySet Name="Autoes" EntityType="Model1.Auto" />
+          <AssociationSet Name="AutoSasiu" Association="Model1.AutoSasiu">
+            <End Role="Auto" EntitySet="Autoes" />
+            <End Role="Sasiu" EntitySet="Sasius" />
+          </AssociationSet>
+          <EntitySet Name="Materials" EntityType="Model1.Material" />
+          <EntitySet Name="Imagines" EntityType="Model1.Imagine" />
+          <EntitySet Name="Operaties" EntityType="Model1.Operatie" />
+          <EntitySet Name="Comandas" EntityType="Model1.Comanda" />
+          <AssociationSet Name="ComandaClient" Association="Model1.ComandaClient">
+            <End Role="Comanda" EntitySet="Comandas" />
+            <End Role="Client" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="ComandaAuto" Association="Model1.ComandaAuto">
+            <End Role="Comanda" EntitySet="Comandas" />
+            <End Role="Auto" EntitySet="Autoes" />
+          </AssociationSet>
+          <EntitySet Name="DetaliuComandas" EntityType="Model1.DetaliuComanda" />
+          <AssociationSet Name="DetaliuComandaMecanic" Association="Model1.DetaliuComandaMecanic">
+            <End Role="DetaliuComanda" EntitySet="DetaliuComandas" />
+            <End Role="Mecanic" EntitySet="Mecanics" />
+          </AssociationSet>
+          <AssociationSet Name="DetaliuComandaMaterial" Association="Model1.DetaliuComandaMaterial">
+            <End Role="DetaliuComanda" EntitySet="DetaliuComandas" />
+            <End Role="Material" EntitySet="Materials" />
+          </AssociationSet>
+          <AssociationSet Name="ComandaOperatie" Association="Model1.ComandaOperatie">
+            <End Role="Comanda" EntitySet="Comandas" />
+            <End Role="Operatie" EntitySet="Operaties" />
+          </AssociationSet>
+          <AssociationSet Name="DetaliuComandaImagine" Association="Model1.DetaliuComandaImagine">
+            <End Role="DetaliuComanda" EntitySet="DetaliuComandas" />
+            <End Role="Imagine" EntitySet="Imagines" />
+          </AssociationSet>
+          <AssociationSet Name="ComandaDetaliuComanda" Association="Model1.ComandaDetaliuComanda">
+            <End Role="Comanda" EntitySet="Comandas" />
+            <End Role="DetaliuComanda" EntitySet="DetaliuComandas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nume" Type="String" Nullable="false" MaxLength="15" />
+          <Property Name="Prenume" Type="String" Nullable="false" MaxLength="15" />
+          <Property Name="Adresa" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="Localitate" Type="String" Nullable="false" MaxLength="10" />
+          <Property Name="Judet" Type="String" Nullable="false" MaxLength="10" />
+          <Property Name="Telefon" Type="Int16" Nullable="false" DefaultValue="13" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sasiu">
+          <Key>
+            <PropertyRef Name="SasiuId" />
+          </Key>
+          <Property Name="SasiuId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodSasiu" Type="String" Nullable="false" MaxLength="2" />
+          <Property Name="Denumire" Type="String" Nullable="false" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="Mecanic">
+          <Key>
+            <PropertyRef Name="MecanicId" />
+          </Key>
+          <Property Name="MecanicId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nume" Type="String" Nullable="false" MaxLength="15" />
+          <Property Name="Prenume" Type="String" Nullable="false" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Auto">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="AutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumarAuto" Type="String" Nullable="false" />
+          <Property Name="SerieSasiu" Type="String" Nullable="false" MaxLength="25" />
+          <NavigationProperty Name="Sasiu" Relationship="Model1.AutoSasiu" FromRole="Auto" ToRole="Sasiu" />
+        </EntityType>
+        <Association Name="AutoSasiu">
+          <End Type="Model1.Auto" Role="Auto" Multiplicity="1" />
+          <End Type="Model1.Sasiu" Role="Sasiu" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="MaterialId" />
+          </Key>
+          <Property Name="MaterialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Denumire" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="Cantitate" Type="Decimal" Nullable="false" />
+          <Property Name="Pret" Type="Decimal" Nullable="false" />
+          <Property Name="DataAprovizionare" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Imagine">
+          <Key>
+            <PropertyRef Name="ImagineId" />
+          </Key>
+          <Property Name="ImagineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titlu" Type="String" Nullable="false" MaxLength="15" />
+          <Property Name="Descriere" Type="String" Nullable="false" MaxLength="256" />
+          <Property Name="Data" Type="DateTime" Nullable="false" />
+          <Property Name="Foto" Type="Binary" Nullable="false" />
+          <NavigationProperty Name="DetaliuComanda" Relationship="Model1.DetaliuComandaImagine" FromRole="Imagine" ToRole="DetaliuComanda" />
+        </EntityType>
+        <EntityType Name="Operatie">
+          <Key>
+            <PropertyRef Name="OperatieId" />
+          </Key>
+          <Property Name="OperatieId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Denumire" Type="String" Nullable="false" MaxLength="256" />
+          <Property Name="TimpExecutie" Type="Decimal" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comanda">
+          <Key>
+            <PropertyRef Name="ComandaID" />
+          </Key>
+          <Property Name="ComandaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Client" Relationship="Model1.ComandaClient" FromRole="Comanda" ToRole="Client" />
+          <NavigationProperty Name="Auto" Relationship="Model1.ComandaAuto" FromRole="Comanda" ToRole="Auto" />
+          <Property Name="StareComanda" Type="Model1.StareComanda" Nullable="false" />
+          <Property Name="DAtaSystem" Type="DateTime" Nullable="false" />
+          <Property Name="DataProgramare" Type="DateTime" Nullable="false" />
+          <Property Name="DataFinalizare" Type="DateTime" Nullable="true" />
+          <Property Name="KmBord" Type="Int32" Nullable="false" />
+          <Property Name="Descriere" Type="String" Nullable="false" MaxLength="1024" />
+          <Property Name="ValoarePiese" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="Operaties" Relationship="Model1.ComandaOperatie" FromRole="Comanda" ToRole="Operatie" />
+          <NavigationProperty Name="DetaliuComanda" Relationship="Model1.ComandaDetaliuComanda" FromRole="Comanda" ToRole="DetaliuComanda" />
+        </EntityType>
+        <Association Name="ComandaClient">
+          <End Type="Model1.Comanda" Role="Comanda" Multiplicity="1" />
+          <End Type="Model1.Client" Role="Client" Multiplicity="1" />
+        </Association>
+        <Association Name="ComandaAuto">
+          <End Type="Model1.Comanda" Role="Comanda" Multiplicity="1" />
+          <End Type="Model1.Auto" Role="Auto" Multiplicity="1" />
+        </Association>
+        <EnumType Name="StareComanda" IsFlags="true">
+          <Member Name="Asteptare" Value="0" />
+          <Member Name="Executata" Value="1" />
+          <Member Name="Refuz" Value="3" />
+        </EnumType>
+        <EntityType Name="DetaliuComanda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Mecanics" Relationship="Model1.DetaliuComandaMecanic" FromRole="DetaliuComanda" ToRole="Mecanic" />
+          <NavigationProperty Name="Materials" Relationship="Model1.DetaliuComandaMaterial" FromRole="DetaliuComanda" ToRole="Material" />
+          <NavigationProperty Name="Imagines" Relationship="Model1.DetaliuComandaImagine" FromRole="DetaliuComanda" ToRole="Imagine" />
+          <NavigationProperty Name="Comanda" Relationship="Model1.ComandaDetaliuComanda" FromRole="DetaliuComanda" ToRole="Comanda" />
+        </EntityType>
+        <Association Name="DetaliuComandaMecanic">
+          <End Type="Model1.DetaliuComanda" Role="DetaliuComanda" Multiplicity="*" />
+          <End Type="Model1.Mecanic" Role="Mecanic" Multiplicity="*" />
+        </Association>
+        <Association Name="DetaliuComandaMaterial">
+          <End Type="Model1.DetaliuComanda" Role="DetaliuComanda" Multiplicity="*" />
+          <End Type="Model1.Material" Role="Material" Multiplicity="*" />
+        </Association>
+        <Association Name="ComandaOperatie">
+          <End Type="Model1.Comanda" Role="Comanda" Multiplicity="*" />
+          <End Type="Model1.Operatie" Role="Operatie" Multiplicity="*" />
+        </Association>
+        <Association Name="DetaliuComandaImagine">
+          <End Type="Model1.DetaliuComanda" Role="DetaliuComanda" Multiplicity="0..1" />
+          <End Type="Model1.Imagine" Role="Imagine" Multiplicity="*" />
+        </Association>
+        <Association Name="ComandaDetaliuComanda">
+          <End Type="Model1.Comanda" Role="Comanda" Multiplicity="1" />
+          <End Type="Model1.DetaliuComanda" Role="DetaliuComanda" Multiplicity="1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Client)">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Localitate" ColumnName="Localitate" />
+          <ScalarProperty Name="Judet" ColumnName="Judet" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sasius">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Sasiu)">
+        <MappingFragment StoreEntitySet="Sasius">
+          <ScalarProperty Name="SasiuId" ColumnName="SasiuId" />
+          <ScalarProperty Name="CodSasiu" ColumnName="CodSasiu" />
+          <ScalarProperty Name="Denumire" ColumnName="Denumire" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mecanics">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Mecanic)">
+        <MappingFragment StoreEntitySet="Mecanics">
+          <ScalarProperty Name="MecanicId" ColumnName="MecanicId" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Autoes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Auto)">
+        <MappingFragment StoreEntitySet="Autoes">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="NumarAuto" ColumnName="NumarAuto" />
+          <ScalarProperty Name="SerieSasiu" ColumnName="SerieSasiu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Materials">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Material)">
+        <MappingFragment StoreEntitySet="Materials">
+          <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+          <ScalarProperty Name="Denumire" ColumnName="Denumire" />
+          <ScalarProperty Name="Cantitate" ColumnName="Cantitate" />
+          <ScalarProperty Name="Pret" ColumnName="Pret" />
+          <ScalarProperty Name="DataAprovizionare" ColumnName="DataAprovizionare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Imagines">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Imagine)">
+        <MappingFragment StoreEntitySet="Imagines">
+          <ScalarProperty Name="ImagineId" ColumnName="ImagineId" />
+          <ScalarProperty Name="Titlu" ColumnName="Titlu" />
+          <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Operaties">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Operatie)">
+        <MappingFragment StoreEntitySet="Operaties">
+          <ScalarProperty Name="OperatieId" ColumnName="OperatieId" />
+          <ScalarProperty Name="Denumire" ColumnName="Denumire" />
+          <ScalarProperty Name="TimpExecutie" ColumnName="TimpExecutie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comandas">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Comanda)">
+        <MappingFragment StoreEntitySet="Comandas">
+          <ScalarProperty Name="ComandaID" ColumnName="ComandaID" />
+          <ScalarProperty Name="StareComanda" ColumnName="StareComanda" />
+          <ScalarProperty Name="DAtaSystem" ColumnName="DAtaSystem" />
+          <ScalarProperty Name="DataProgramare" ColumnName="DataProgramare" />
+          <ScalarProperty Name="DataFinalizare" ColumnName="DataFinalizare" />
+          <ScalarProperty Name="KmBord" ColumnName="KmBord" />
+          <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+          <ScalarProperty Name="ValoarePiese" ColumnName="ValoarePiese" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetaliuComandas">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.DetaliuComanda)">
+        <MappingFragment StoreEntitySet="DetaliuComandas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AutoSasiu" TypeName="Model1.AutoSasiu" StoreEntitySet="Sasius">
+      <EndProperty Name="Auto">
+        <ScalarProperty Name="AutoId" ColumnName="AutoSasiu_Sasiu_AutoId" />
+      </EndProperty>
+      <EndProperty Name="Sasiu">
+        <ScalarProperty Name="SasiuId" ColumnName="SasiuId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ComandaClient" TypeName="Model1.ComandaClient" StoreEntitySet="Comandas">
+      <EndProperty Name="Client">
+        <ScalarProperty Name="Id" ColumnName="Client_Id" />
+      </EndProperty>
+      <EndProperty Name="Comanda">
+        <ScalarProperty Name="ComandaID" ColumnName="ComandaID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ComandaAuto" TypeName="Model1.ComandaAuto" StoreEntitySet="Comandas">
+      <EndProperty Name="Auto">
+        <ScalarProperty Name="AutoId" ColumnName="Auto_AutoId" />
+      </EndProperty>
+      <EndProperty Name="Comanda">
+        <ScalarProperty Name="ComandaID" ColumnName="ComandaID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DetaliuComandaMecanic" TypeName="Model1.DetaliuComandaMecanic" StoreEntitySet="DetaliuComandaMecanic">
+      <EndProperty Name="DetaliuComanda">
+        <ScalarProperty Name="Id" ColumnName="DetaliuComandaMecanic_Mecanic_Id" />
+      </EndProperty>
+      <EndProperty Name="Mecanic">
+        <ScalarProperty Name="MecanicId" ColumnName="Mecanics_MecanicId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DetaliuComandaMaterial" TypeName="Model1.DetaliuComandaMaterial" StoreEntitySet="DetaliuComandaMaterial">
+      <EndProperty Name="DetaliuComanda">
+        <ScalarProperty Name="Id" ColumnName="DetaliuComandaMaterial_Material_Id" />
+      </EndProperty>
+      <EndProperty Name="Material">
+        <ScalarProperty Name="MaterialId" ColumnName="Materials_MaterialId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ComandaOperatie" TypeName="Model1.ComandaOperatie" StoreEntitySet="ComandaOperatie">
+      <EndProperty Name="Comanda">
+        <ScalarProperty Name="ComandaID" ColumnName="ComandaOperatie_Operatie_ComandaID" />
+      </EndProperty>
+      <EndProperty Name="Operatie">
+        <ScalarProperty Name="OperatieId" ColumnName="Operaties_OperatieId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DetaliuComandaImagine" TypeName="Model1.DetaliuComandaImagine" StoreEntitySet="Imagines">
+      <EndProperty Name="DetaliuComanda">
+        <ScalarProperty Name="Id" ColumnName="DetaliuComanda_Id" />
+      </EndProperty>
+      <EndProperty Name="Imagine">
+        <ScalarProperty Name="ImagineId" ColumnName="ImagineId" />
+      </EndProperty>
+      <Condition ColumnName="DetaliuComanda_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ComandaDetaliuComanda" TypeName="Model1.ComandaDetaliuComanda" StoreEntitySet="Comandas">
+      <EndProperty Name="DetaliuComanda">
+        <ScalarProperty Name="Id" ColumnName="DetaliuComanda_Id" />
+      </EndProperty>
+      <EndProperty Name="Comanda">
+        <ScalarProperty Name="ComandaID" ColumnName="ComandaID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

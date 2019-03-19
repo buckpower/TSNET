@@ -18,8 +18,8 @@ namespace ConsoleApp1
         public string Titlu { get; set; }
         public string Descriere { get; set; }
         public System.DateTime Data { get; set; }
-        public string Foto { get; set; }
+        public byte[] Foto { get; set; }
     
-        public virtual Comanda Comanda { get; set; }
+        public virtual DetaliuComanda DetaliuComanda { get; set; }
     }
 }

@@ -14,6 +14,12 @@ namespace ConsoleApp1
     
     public partial class Comanda
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Comanda()
+        {
+            this.Operaties = new HashSet<Operatie>();
+        }
+    
         public int ComandaID { get; set; }
         public StareComanda StareComanda { get; set; }
         public System.DateTime DAtaSystem { get; set; }
@@ -25,5 +31,8 @@ namespace ConsoleApp1
     
         public virtual Client Client { get; set; }
         public virtual Auto Auto { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Operatie> Operaties { get; set; }
+        public virtual DetaliuComanda DetaliuComanda { get; set; }
     }
 }

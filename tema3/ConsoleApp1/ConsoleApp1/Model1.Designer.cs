@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'F:\Personal Storage\faculta\TNET\tema3\ConsoleApp1\ConsoleApp1\Model1.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\cristian\Desktop\TNET\Git\TSNET\tema3\ConsoleApp1\ConsoleApp1\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

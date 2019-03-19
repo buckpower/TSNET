@@ -16,7 +16,12 @@
         <EntityTypeShape EntityType="Model1.Comanda" Width="1.5" PointX="11.25" PointY="4.625" />
         <AssociationConnector Association="Model1.ComandaClient" />
         <AssociationConnector Association="Model1.ComandaAuto" />
-        <AssociationConnector Association="Model1.ImagineComanda" />
+        <EntityTypeShape EntityType="Model1.DetaliuComanda" Width="1.5" PointX="3.125" PointY="7.625" />
+        <AssociationConnector Association="Model1.DetaliuComandaMecanic" />
+        <AssociationConnector Association="Model1.DetaliuComandaMaterial" />
+        <AssociationConnector Association="Model1.ComandaOperatie" />
+        <AssociationConnector Association="Model1.DetaliuComandaImagine" />
+        <AssociationConnector Association="Model1.ComandaDetaliuComanda" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

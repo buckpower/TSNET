@@ -2,7 +2,7 @@
 using System.Data.Entity.Migrations;
 using System.Linq;
 
-namespace ConsoleApp1.Repos
+namespace CarService.Repos
 {
     public class ImagineRepo : CarServiceRepository<Imagine, int>, IQueryable<Imagine, Imagine>
     {

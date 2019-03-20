@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ConsoleApp1.Repos
+namespace CarService.Repos
 {
     public interface IQueryable<T,Q>
     {

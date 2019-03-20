@@ -3,7 +3,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
-namespace ConsoleApp1.Repos
+namespace CarService.Repos
 {
     public class ClientRepo : CarServiceRepository<Client, int>, IQueryable<Client,Client>
     {

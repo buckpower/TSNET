@@ -5,9 +5,9 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B1D25D2C-BC0F-4D4F-A4F3-22881E543C9D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleApp1</RootNamespace>
-    <AssemblyName>ConsoleApp1</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CarService</RootNamespace>
+    <AssemblyName>CarService</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
@@ -51,45 +54,44 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auto.cs">
-      <DependentUpon>AutoProj.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AutoProj.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AutoProj.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AutoProj.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AutoProj.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Client.cs">
-      <DependentUpon>AutoProj.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Comanda.cs">
-      <DependentUpon>AutoProj.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DetaliuComanda.cs">
-      <DependentUpon>AutoProj.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imagine.cs">
-      <DependentUpon>AutoProj.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Material.cs">
-      <DependentUpon>AutoProj.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Mecanic.cs">
-      <DependentUpon>AutoProj.tt</DependentUpon>
+      <DependentUpon>CarServiceDAL.tt</DependentUpon>
     </Compile>
     <Compile Include="CarService.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CarService.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Operatie.cs">
-      <DependentUpon>AutoProj.tt</DependentUpon>
+    <Compile Include="CarServiceDAL.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarServiceDAL.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="CarServiceDAL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarServiceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client.cs">
+      <DependentUpon>CarServiceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Comanda.cs">
+      <DependentUpon>CarServiceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DetaliuComanda.cs">
+      <DependentUpon>CarServiceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Imagine.cs">
+      <DependentUpon>CarServiceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Material.cs">
+      <DependentUpon>CarServiceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mecanic.cs">
+      <DependentUpon>CarServiceDAL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Operatie.cs">
+      <DependentUpon>CarServiceDAL.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\AutoRepo.cs" />
     <Compile Include="Repos\CarServiceRepository.cs" />
@@ -103,10 +105,10 @@
     <Compile Include="Repos\OperatieRepo.cs" />
     <Compile Include="Repos\SasiuRepo.cs" />
     <Compile Include="Sasiu.cs">
-      <DependentUpon>AutoProj.tt</DependentUpon>
+      <DependentUpon>CarServiceDAL.tt</DependentUpon>
     </Compile>
     <Compile Include="StareComanda.cs">
-      <DependentUpon>AutoProj.tt</DependentUpon>
+      <DependentUpon>CarServiceDAL.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -121,17 +123,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AutoProj.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AutoProj.Context.cs</LastGenOutput>
-      <DependentUpon>CarService.edmx</DependentUpon>
-    </Content>
-    <Content Include="AutoProj.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AutoProj.cs</LastGenOutput>
-      <DependentUpon>CarService.edmx</DependentUpon>
-    </Content>
     <Content Include="CarService.edmx.sql" />
+    <Content Include="CarServiceDAL.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CarServiceDAL.Context.cs</LastGenOutput>
+      <DependentUpon>CarService.edmx</DependentUpon>
+    </Content>
+    <Content Include="CarServiceDAL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CarServiceDAL.cs</LastGenOutput>
+      <DependentUpon>CarService.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

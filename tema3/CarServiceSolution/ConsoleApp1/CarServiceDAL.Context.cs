@@ -18,13 +18,28 @@ namespace CarService
         public Model1Container()
             : base("name=Model1Container")
         {
+            //this.Database.CreateIfNotExists();
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            /*
+            modelBuilder.Entity<DetaliuComanda>()
+                .HasMany(d => d.Mecanics);
+            modelBuilder.Entity<DetaliuComanda>()
+                .HasMany(d => d.Imagines);
+            modelBuilder.Entity<DetaliuComanda>()
+                .HasMany(d => d.Materials);
+            modelBuilder.Entity<DetaliuComanda>()
+                .HasRequired(dc => dc.Comanda)
+                .WithOptional(d => d.DetaliuComanda);
+
+            */
+            modelBuilder.Entity<Comanda>()
+                .HasOptional(f => f.DetaliuComanda)
+                .WithRequired(s => s.Comanda);
         }
-    
+
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<Sasiu> Sasius { get; set; }
         public virtual DbSet<Mecanic> Mecanics { get; set; }

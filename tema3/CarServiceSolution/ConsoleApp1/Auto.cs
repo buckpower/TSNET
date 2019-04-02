@@ -19,5 +19,6 @@ namespace CarService
         public string SerieSasiu { get; set; }
     
         public virtual Sasiu Sasiu { get; set; }
+        public virtual Client Client { get; set; }
     }
 }

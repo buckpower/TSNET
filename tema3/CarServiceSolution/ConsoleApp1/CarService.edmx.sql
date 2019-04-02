@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 03/19/2019 20:25:54
--- Generated from EDMX file: C:\Users\cristian\Desktop\TNET\Git\TSNET\tema3\ConsoleApp1\ConsoleApp1\Model1.edmx
+-- Date Created: 04/03/2019 00:17:26
+-- Generated from EDMX file: C:\Users\cristian\Desktop\TNET\Git\TSNET\tema3\CarServiceSolution\ConsoleApp1\CarService.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [master];
+USE [CarService];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -26,8 +26,32 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ComandaAuto]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Comandas] DROP CONSTRAINT [FK_ComandaAuto];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ImagineComanda]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Imagines] DROP CONSTRAINT [FK_ImagineComanda];
+IF OBJECT_ID(N'[dbo].[FK_DetaliuComandaMecanic_DetaliuComanda]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DetaliuComandaMecanic] DROP CONSTRAINT [FK_DetaliuComandaMecanic_DetaliuComanda];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DetaliuComandaMecanic_Mecanic]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DetaliuComandaMecanic] DROP CONSTRAINT [FK_DetaliuComandaMecanic_Mecanic];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DetaliuComandaMaterial_DetaliuComanda]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DetaliuComandaMaterial] DROP CONSTRAINT [FK_DetaliuComandaMaterial_DetaliuComanda];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DetaliuComandaMaterial_Material]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DetaliuComandaMaterial] DROP CONSTRAINT [FK_DetaliuComandaMaterial_Material];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ComandaOperatie_Comanda]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ComandaOperatie] DROP CONSTRAINT [FK_ComandaOperatie_Comanda];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ComandaOperatie_Operatie]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ComandaOperatie] DROP CONSTRAINT [FK_ComandaOperatie_Operatie];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DetaliuComandaImagine]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Imagines] DROP CONSTRAINT [FK_DetaliuComandaImagine];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ComandaDetaliuComanda]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Comandas] DROP CONSTRAINT [FK_ComandaDetaliuComanda];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ClientAuto]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Clients] DROP CONSTRAINT [FK_ClientAuto];
 GO
 
 -- --------------------------------------------------
@@ -57,6 +81,18 @@ IF OBJECT_ID(N'[dbo].[Operaties]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Comandas]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Comandas];
+GO
+IF OBJECT_ID(N'[dbo].[DetaliuComandas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DetaliuComandas];
+GO
+IF OBJECT_ID(N'[dbo].[DetaliuComandaMecanic]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DetaliuComandaMecanic];
+GO
+IF OBJECT_ID(N'[dbo].[DetaliuComandaMaterial]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DetaliuComandaMaterial];
+GO
+IF OBJECT_ID(N'[dbo].[ComandaOperatie]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ComandaOperatie];
 GO
 
 -- --------------------------------------------------
@@ -97,7 +133,8 @@ GO
 CREATE TABLE [dbo].[Autoes] (
     [AutoId] int IDENTITY(1,1) NOT NULL,
     [NumarAuto] nvarchar(max)  NOT NULL,
-    [SerieSasiu] nvarchar(25)  NOT NULL
+    [SerieSasiu] nvarchar(25)  NOT NULL,
+    [Client_Id] int  NOT NULL
 );
 GO
 
@@ -398,6 +435,21 @@ GO
 CREATE INDEX [IX_FK_ComandaDetaliuComanda]
 ON [dbo].[Comandas]
     ([DetaliuComanda_Id]);
+GO
+
+-- Creating foreign key on [Client_Id] in table 'Autoes'
+ALTER TABLE [dbo].[Autoes]
+ADD CONSTRAINT [FK_ClientAuto]
+    FOREIGN KEY ([Client_Id])
+    REFERENCES [dbo].[Clients]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ClientAuto'
+CREATE INDEX [IX_FK_ClientAuto]
+ON [dbo].[Autoes]
+    ([Client_Id]);
 GO
 
 -- --------------------------------------------------

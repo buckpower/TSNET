@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="Model1StoreContainer">
     <EntitySet Name="Clients" EntityType="Model1.Store.Clients" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Sasius" EntityType="Model1.Store.Sasius" store:Type="Tables" Schema="dbo" />
@@ -62,6 +62,10 @@
       <End Role="Comanda" EntitySet="Comandas" />
       <End Role="DetaliuComanda" EntitySet="DetaliuComandas" />
     </AssociationSet>
+    <AssociationSet Name="ClientAuto" Association="Model1.Store.ClientAuto">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="Auto" EntitySet="Autoes" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Clients">
     <Key>
@@ -100,6 +104,7 @@
     <Property Name="AutoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NumarAuto" Type="nvarchar(max)" Nullable="false" />
     <Property Name="SerieSasiu" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="Client_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Materials">
     <Key>
@@ -236,6 +241,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="ClientAuto">
+    <End Role="Client" Type="Model1.Store.Clients" Multiplicity="1" />
+    <End Role="Auto" Type="Model1.Store.Autoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Auto">
+        <PropertyRef Name="Client_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_DetaliuComandaMecanic_DetaliuComanda">
     <End Role="DetaliuComanda" Type="Model1.Store.DetaliuComandas" Multiplicity="1" />
     <End Role="DetaliuComandaMecanic" Type="Model1.Store.DetaliuComandaMecanic" Multiplicity="*" />
@@ -330,8 +347,8 @@
             <End Role="Client" EntitySet="Clients" />
           </AssociationSet>
           <AssociationSet Name="ComandaAuto" Association="Model1.ComandaAuto">
-            <End Role="Comanda" EntitySet="Comandas" />
-            <End Role="Auto" EntitySet="Autoes" />
+            <End EntitySet="Comandas" Role="Comanda" />
+            <End EntitySet="Autoes" Role="Auto" />
           </AssociationSet>
           <EntitySet Name="DetaliuComandas" EntityType="Model1.DetaliuComanda" />
           <AssociationSet Name="DetaliuComandaMecanic" Association="Model1.DetaliuComandaMecanic">
@@ -353,6 +370,10 @@
           <AssociationSet Name="ComandaDetaliuComanda" Association="Model1.ComandaDetaliuComanda">
             <End Role="Comanda" EntitySet="Comandas" />
             <End Role="DetaliuComanda" EntitySet="DetaliuComandas" />
+          </AssociationSet>
+          <AssociationSet Name="ClientAuto" Association="Model1.ClientAuto">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="Auto" EntitySet="Autoes" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Client">
@@ -392,6 +413,7 @@
           <Property Name="NumarAuto" Type="String" Nullable="false" />
           <Property Name="SerieSasiu" Type="String" Nullable="false" MaxLength="25" />
           <NavigationProperty Name="Sasiu" Relationship="Model1.AutoSasiu" FromRole="Auto" ToRole="Sasiu" />
+          <NavigationProperty Name="Client" Relationship="Model1.ClientAuto" FromRole="Auto" ToRole="Client" />
         </EntityType>
         <Association Name="AutoSasiu">
           <End Type="Model1.Auto" Role="Auto" Multiplicity="1" />
@@ -448,8 +470,8 @@
           <End Type="Model1.Client" Role="Client" Multiplicity="1" />
         </Association>
         <Association Name="ComandaAuto">
-          <End Type="Model1.Comanda" Role="Comanda" Multiplicity="1" />
-          <End Type="Model1.Auto" Role="Auto" Multiplicity="1" />
+          <End Type="Model1.Comanda" Multiplicity="1" Role="Comanda" />
+          <End Type="Model1.Auto" Multiplicity="1" Role="Auto" />
         </Association>
         <EnumType Name="StareComanda" IsFlags="true">
           <Member Name="Asteptare" Value="0" />
@@ -485,6 +507,10 @@
         <Association Name="ComandaDetaliuComanda">
           <End Type="Model1.Comanda" Role="Comanda" Multiplicity="1" />
           <End Type="Model1.DetaliuComanda" Role="DetaliuComanda" Multiplicity="1" />
+        </Association>
+        <Association Name="ClientAuto">
+          <End Type="Model1.Client" Role="Client" Multiplicity="1" />
+          <End Type="Model1.Auto" Role="Auto" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -650,6 +676,14 @@
         <ScalarProperty Name="ComandaID" ColumnName="ComandaID" />
       </EndProperty>
     </AssociationSetMapping>
+    <AssociationSetMapping Name="ClientAuto" TypeName="Model1.ClientAuto" StoreEntitySet="Autoes">
+      <EndProperty Name="Client">
+        <ScalarProperty Name="Id" ColumnName="Client_Id" />
+      </EndProperty>
+      <EndProperty Name="Auto">
+        <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
@@ -665,7 +699,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
-        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->

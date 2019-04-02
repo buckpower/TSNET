@@ -22,6 +22,7 @@
         <AssociationConnector Association="Model1.ComandaOperatie" />
         <AssociationConnector Association="Model1.DetaliuComandaImagine" />
         <AssociationConnector Association="Model1.ComandaDetaliuComanda" />
+        <AssociationConnector Association="Model1.ClientAuto" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

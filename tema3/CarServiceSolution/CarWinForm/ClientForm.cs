@@ -54,5 +54,11 @@ namespace CarWinForm
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var addAuto = new AddClientForm(dgvAutoes);
+            addAuto.Show();
+        }
     }
 }

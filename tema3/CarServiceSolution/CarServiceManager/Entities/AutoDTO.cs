@@ -9,12 +9,14 @@ namespace CarServiceManager.Entities
         public string SerieSasiu { get; set; }
 
         public virtual SasiuDTO Sasiu { get; set; }
-        public virtual ClientDTO Client { get; set; }
+        //public virtual ClientDTO Client { get; set; }
+        public int ClientId { get; set; }
 
         public AutoDTO() { }
         internal AutoDTO(Auto auto)
         {
-            Client = new ClientDTO(auto.Client);
+            //Client = new ClientDTO(auto.Client);
+            ClientId = auto.Client.Id;
             AutoId = auto.AutoId;
             NumarAuto = auto.NumarAuto;
             Sasiu = new SasiuDTO(auto.Sasiu);

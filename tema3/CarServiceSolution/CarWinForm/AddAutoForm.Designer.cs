@@ -30,9 +30,9 @@
         {
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.tbClientAddress = new System.Windows.Forms.TextBox();
-            this.tbClientSurname = new System.Windows.Forms.TextBox();
-            this.tbClientName = new System.Windows.Forms.TextBox();
+            this.tbCodSasiu = new System.Windows.Forms.TextBox();
+            this.tbSerieSasiu = new System.Windows.Forms.TextBox();
+            this.tbNumarAuto = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +50,7 @@
             this.button2.TabIndex = 31;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -59,28 +60,29 @@
             this.button1.TabIndex = 30;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // tbClientAddress
+            // tbCodSasiu
             // 
-            this.tbClientAddress.Location = new System.Drawing.Point(100, 53);
-            this.tbClientAddress.Name = "tbClientAddress";
-            this.tbClientAddress.Size = new System.Drawing.Size(223, 20);
-            this.tbClientAddress.TabIndex = 25;
+            this.tbCodSasiu.Location = new System.Drawing.Point(100, 53);
+            this.tbCodSasiu.Name = "tbCodSasiu";
+            this.tbCodSasiu.Size = new System.Drawing.Size(223, 20);
+            this.tbCodSasiu.TabIndex = 25;
             // 
-            // tbClientSurname
+            // tbSerieSasiu
             // 
-            this.tbClientSurname.Location = new System.Drawing.Point(100, 29);
-            this.tbClientSurname.Name = "tbClientSurname";
-            this.tbClientSurname.Size = new System.Drawing.Size(223, 20);
-            this.tbClientSurname.TabIndex = 24;
+            this.tbSerieSasiu.Location = new System.Drawing.Point(100, 29);
+            this.tbSerieSasiu.Name = "tbSerieSasiu";
+            this.tbSerieSasiu.Size = new System.Drawing.Size(223, 20);
+            this.tbSerieSasiu.TabIndex = 24;
             // 
-            // tbClientName
+            // tbNumarAuto
             // 
-            this.tbClientName.Location = new System.Drawing.Point(100, 6);
-            this.tbClientName.Name = "tbClientName";
-            this.tbClientName.Size = new System.Drawing.Size(223, 20);
-            this.tbClientName.TabIndex = 23;
-            this.tbClientName.Text = "\r\n";
+            this.tbNumarAuto.Location = new System.Drawing.Point(100, 6);
+            this.tbNumarAuto.Name = "tbNumarAuto";
+            this.tbNumarAuto.Size = new System.Drawing.Size(223, 20);
+            this.tbNumarAuto.TabIndex = 23;
+            this.tbNumarAuto.Text = "\r\n";
             // 
             // label4
             // 
@@ -151,9 +153,9 @@
             this.Controls.Add(this.tbDenumireSasiu);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.tbClientAddress);
-            this.Controls.Add(this.tbClientSurname);
-            this.Controls.Add(this.tbClientName);
+            this.Controls.Add(this.tbCodSasiu);
+            this.Controls.Add(this.tbSerieSasiu);
+            this.Controls.Add(this.tbNumarAuto);
             this.Controls.Add(this.lblClientId);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -162,7 +164,6 @@
             this.Controls.Add(this.label1);
             this.Name = "AddAutoForm";
             this.Text = "AddAutoForm";
-            this.Load += new System.EventHandler(this.AddAutoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,9 +173,9 @@
 
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox tbClientAddress;
-        private System.Windows.Forms.TextBox tbClientSurname;
-        private System.Windows.Forms.TextBox tbClientName;
+        private System.Windows.Forms.TextBox tbCodSasiu;
+        private System.Windows.Forms.TextBox tbSerieSasiu;
+        private System.Windows.Forms.TextBox tbNumarAuto;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

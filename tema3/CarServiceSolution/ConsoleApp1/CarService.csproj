@@ -56,16 +56,6 @@
     <Compile Include="Auto.cs">
       <DependentUpon>CarServiceDAL.tt</DependentUpon>
     </Compile>
-    <Compile Include="CarService.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CarService.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CarService.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CarService.tt</DependentUpon>
-    </Compile>
     <Compile Include="CarService.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -133,17 +123,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CarService.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CarService.Context.cs</LastGenOutput>
-      <DependentUpon>CarService.edmx</DependentUpon>
-    </Content>
     <Content Include="CarService.edmx.sql" />
-    <Content Include="CarService.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CarService.cs</LastGenOutput>
-      <DependentUpon>CarService.edmx</DependentUpon>
-    </Content>
     <Content Include="CarServiceDAL.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CarServiceDAL.Context.cs</LastGenOutput>

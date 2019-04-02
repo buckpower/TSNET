@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAutoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAutoForm.Designer.cs">
+      <DependentUpon>AddAutoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     <Compile Include="PresentationEntites\ClientGridView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddAutoForm.resx">
+      <DependentUpon>AddAutoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddClientForm.resx">
       <DependentUpon>AddClientForm.cs</DependentUpon>
     </EmbeddedResource>

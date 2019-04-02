@@ -42,7 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\AutoDTO.cs" />
     <Compile Include="Entities\ClientDTO.cs" />
+    <Compile Include="Entities\SasiuDTO.cs" />
+    <Compile Include="Managers\AutoManager.cs" />
     <Compile Include="Managers\ClientManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

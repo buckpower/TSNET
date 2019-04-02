@@ -7,6 +7,6 @@
         public string SerieSasiu { get; set; }
         public int SasiuId { get; set; }
         public string CodSasiu { get; set; }
-        public string Denumire { get; set; }
+        public string DenumireSasiu { get; set; }
     }
 }

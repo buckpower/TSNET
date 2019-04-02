@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvAutoes = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,27 +37,27 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblClientName = new System.Windows.Forms.Label();
+            this.lblClientSurname = new System.Windows.Forms.Label();
+            this.lblClientAddress = new System.Windows.Forms.Label();
+            this.lblClientCity = new System.Windows.Forms.Label();
+            this.lblClientCounty = new System.Windows.Forms.Label();
+            this.lblClientTelephone = new System.Windows.Forms.Label();
+            this.lblClientEmail = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAutoes)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvAutoes
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(428, 397);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvAutoes.AllowUserToAddRows = false;
+            this.dgvAutoes.AllowUserToDeleteRows = false;
+            this.dgvAutoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAutoes.Location = new System.Drawing.Point(12, 12);
+            this.dgvAutoes.Name = "dgvAutoes";
+            this.dgvAutoes.ReadOnly = true;
+            this.dgvAutoes.Size = new System.Drawing.Size(428, 397);
+            this.dgvAutoes.TabIndex = 0;
             // 
             // button1
             // 
@@ -132,68 +132,68 @@
             this.label12.TabIndex = 14;
             this.label12.Text = "Email: ";
             // 
-            // label2
+            // lblClientName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(584, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "label2";
+            this.lblClientName.AutoSize = true;
+            this.lblClientName.Location = new System.Drawing.Point(584, 12);
+            this.lblClientName.Name = "lblClientName";
+            this.lblClientName.Size = new System.Drawing.Size(27, 13);
+            this.lblClientName.TabIndex = 15;
+            this.lblClientName.Text = "N/A";
             // 
-            // label4
+            // lblClientSurname
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(584, 38);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "label4";
+            this.lblClientSurname.AutoSize = true;
+            this.lblClientSurname.Location = new System.Drawing.Point(584, 38);
+            this.lblClientSurname.Name = "lblClientSurname";
+            this.lblClientSurname.Size = new System.Drawing.Size(27, 13);
+            this.lblClientSurname.TabIndex = 16;
+            this.lblClientSurname.Text = "N/A";
             // 
-            // label6
+            // lblClientAddress
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(584, 64);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "label6";
+            this.lblClientAddress.AutoSize = true;
+            this.lblClientAddress.Location = new System.Drawing.Point(584, 64);
+            this.lblClientAddress.Name = "lblClientAddress";
+            this.lblClientAddress.Size = new System.Drawing.Size(27, 13);
+            this.lblClientAddress.TabIndex = 17;
+            this.lblClientAddress.Text = "N/A";
             // 
-            // label9
+            // lblClientCity
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(584, 90);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "label9";
+            this.lblClientCity.AutoSize = true;
+            this.lblClientCity.Location = new System.Drawing.Point(584, 90);
+            this.lblClientCity.Name = "lblClientCity";
+            this.lblClientCity.Size = new System.Drawing.Size(27, 13);
+            this.lblClientCity.TabIndex = 18;
+            this.lblClientCity.Text = "N/A";
             // 
-            // label10
+            // lblClientCounty
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(584, 116);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "label10";
+            this.lblClientCounty.AutoSize = true;
+            this.lblClientCounty.Location = new System.Drawing.Point(584, 116);
+            this.lblClientCounty.Name = "lblClientCounty";
+            this.lblClientCounty.Size = new System.Drawing.Size(27, 13);
+            this.lblClientCounty.TabIndex = 19;
+            this.lblClientCounty.Text = "N/A";
             // 
-            // label13
+            // lblClientTelephone
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(584, 142);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "label13";
+            this.lblClientTelephone.AutoSize = true;
+            this.lblClientTelephone.Location = new System.Drawing.Point(584, 142);
+            this.lblClientTelephone.Name = "lblClientTelephone";
+            this.lblClientTelephone.Size = new System.Drawing.Size(27, 13);
+            this.lblClientTelephone.TabIndex = 20;
+            this.lblClientTelephone.Text = "N/A";
             // 
-            // label14
+            // lblClientEmail
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(584, 176);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 13);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "label14";
+            this.lblClientEmail.AutoSize = true;
+            this.lblClientEmail.Location = new System.Drawing.Point(584, 176);
+            this.lblClientEmail.Name = "lblClientEmail";
+            this.lblClientEmail.Size = new System.Drawing.Size(27, 13);
+            this.lblClientEmail.TabIndex = 21;
+            this.lblClientEmail.Text = "N/A";
             // 
             // button2
             // 
@@ -211,13 +211,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblClientEmail);
+            this.Controls.Add(this.lblClientTelephone);
+            this.Controls.Add(this.lblClientCounty);
+            this.Controls.Add(this.lblClientCity);
+            this.Controls.Add(this.lblClientAddress);
+            this.Controls.Add(this.lblClientSurname);
+            this.Controls.Add(this.lblClientName);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label8);
@@ -226,10 +226,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvAutoes);
             this.Name = "ClientForm";
             this.Text = "ClientForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAutoes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,7 +237,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvAutoes;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -246,13 +246,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblClientName;
+        private System.Windows.Forms.Label lblClientSurname;
+        private System.Windows.Forms.Label lblClientAddress;
+        private System.Windows.Forms.Label lblClientCity;
+        private System.Windows.Forms.Label lblClientCounty;
+        private System.Windows.Forms.Label lblClientTelephone;
+        private System.Windows.Forms.Label lblClientEmail;
         private System.Windows.Forms.Button button2;
     }
 }

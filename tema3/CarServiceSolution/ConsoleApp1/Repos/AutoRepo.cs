@@ -33,6 +33,15 @@ namespace CarService.Repos
             }
         }
 
+        public ICollection<Auto> GetByClient(int clientId)
+        {
+            using (var context = new Model1Container())
+            {
+                var found = context.Autoes.Where(x => x.Client.Id == clientId);
+                return found.ToList();
+            }
+        }
+
         public override ICollection<Auto> GetAll()
         {
             using (var context = new Model1Container())

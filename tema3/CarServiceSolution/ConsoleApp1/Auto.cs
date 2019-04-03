@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace CarService
 {
     using System;
@@ -17,7 +19,9 @@ namespace CarService
         public int AutoId { get; set; }
         public string NumarAuto { get; set; }
         public string SerieSasiu { get; set; }
-    
+
+        [Column(name: "ColumnId")]
+        public int ClientId { get; set; }
         public virtual Sasiu Sasiu { get; set; }
         public virtual Client Client { get; set; }
     }

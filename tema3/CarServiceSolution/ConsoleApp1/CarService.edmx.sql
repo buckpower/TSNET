@@ -134,7 +134,7 @@ CREATE TABLE [dbo].[Autoes] (
     [AutoId] int IDENTITY(1,1) NOT NULL,
     [NumarAuto] nvarchar(max)  NOT NULL,
     [SerieSasiu] nvarchar(25)  NOT NULL,
-    [Client_Id] int  NOT NULL
+    [ClientId] int  NOT NULL
 );
 GO
 
@@ -177,7 +177,7 @@ CREATE TABLE [dbo].[Comandas] (
     [KmBord] int  NOT NULL,
     [Descriere] nvarchar(1024)  NOT NULL,
     [ValoarePiese] decimal(18,0)  NOT NULL,
-    [Client_Id] int  NOT NULL,
+    [ClientId] int  NOT NULL,
     [Auto_AutoId] int  NOT NULL,
     [DetaliuComanda_Id] int  NOT NULL
 );
@@ -305,10 +305,10 @@ ON [dbo].[Sasius]
     ([AutoSasiu_Sasiu_AutoId]);
 GO
 
--- Creating foreign key on [Client_Id] in table 'Comandas'
+-- Creating foreign key on [ClientId] in table 'Comandas'
 ALTER TABLE [dbo].[Comandas]
 ADD CONSTRAINT [FK_ComandaClient]
-    FOREIGN KEY ([Client_Id])
+    FOREIGN KEY ([ClientId])
     REFERENCES [dbo].[Clients]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -317,7 +317,7 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_ComandaClient'
 CREATE INDEX [IX_FK_ComandaClient]
 ON [dbo].[Comandas]
-    ([Client_Id]);
+    ([ClientId]);
 GO
 
 -- Creating foreign key on [Auto_AutoId] in table 'Comandas'
@@ -437,10 +437,10 @@ ON [dbo].[Comandas]
     ([DetaliuComanda_Id]);
 GO
 
--- Creating foreign key on [Client_Id] in table 'Autoes'
+-- Creating foreign key on [ClientId] in table 'Autoes'
 ALTER TABLE [dbo].[Autoes]
 ADD CONSTRAINT [FK_ClientAuto]
-    FOREIGN KEY ([Client_Id])
+    FOREIGN KEY ([ClientId])
     REFERENCES [dbo].[Clients]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -449,7 +449,7 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_ClientAuto'
 CREATE INDEX [IX_FK_ClientAuto]
 ON [dbo].[Autoes]
-    ([Client_Id]);
+    ([ClientId]);
 GO
 
 -- --------------------------------------------------

@@ -26,9 +26,8 @@ namespace CarWinForm
 
         public AddAutoForm(int clientId, DataGridView parentDataGridView) : this()
         {
-            InitializeComponent();
             _clientId = clientId;
-            lblClientId.Text = "" + _clientId;
+            lblClientId.Text = clientId.ToString();
             _parentDataGridView = parentDataGridView;
         }
 

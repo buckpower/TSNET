@@ -17,9 +17,9 @@ namespace CarServiceManager
         }
         public List<AutoDTO> GetAutosByClientId(int clientId)
         {
-            var list = _repo.GetByClient(clientId).Select(a => new AutoDTO(a));
+            var list = _repo.GetByClient(clientId).ToList();
 
-            return list.ToList();
+            return list.Select(a => new AutoDTO(a)).ToList();
         }
 
         public void AddAuto(AutoDTO dto)
@@ -42,7 +42,8 @@ namespace CarServiceManager
 
         public List<AutoDTO> GetAutos()
         {
-            return _repo.GetAll().Select(x => new AutoDTO(x)).ToList();
+            var a = _repo.GetAll(); //.Select(x => new AutoDTO(x)).ToList();
+            return a.Select(x => new AutoDTO(x)).ToList();
         }
     }
 }

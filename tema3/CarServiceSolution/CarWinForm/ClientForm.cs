@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using CarServiceManager;
 using CarServiceManager.Entities;
 using CarServiceManager.Managers;
+using CarWinForm.PresentationEntites;
 
 namespace CarWinForm
 {
@@ -11,6 +13,7 @@ namespace CarWinForm
     {
         private ClientManager _clientManager;
         private AutoManager _autoManager;
+
         protected ClientForm()
         {
             InitializeComponent();
@@ -23,8 +26,15 @@ namespace CarWinForm
             //Get client info
             var client = _clientManager.GetClientById(clientId);
             //Get client auto
-            var autoList = _autoManager.GetAutosByClientId(clientId);
-
+            var autoList = _autoManager.GetAutosByClientId(clientId).Select(s =>new AutoGridView()
+            {
+                AutoId = s.AutoId,
+                NumarAuto = s.NumarAuto,
+                SerieSasiu =  s.SerieSasiu,
+                CodSasiu = s.Sasiu.CodSasiu,
+                DenumireSasiu = s.Sasiu.Denumire
+            }).ToList();
+            dgvAutoes.DataSource = autoList;
             //fill presentation
             FillClientInfo(client);
         }
@@ -43,6 +53,7 @@ namespace CarWinForm
             lblClientCounty.Text = dto.Judet;
             lblClientTelephone.Text = "" + dto.Telefon;
             lblClientEmail.Text = dto.Email;
+            lblClientID.Text = "" + dto.Id;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -57,7 +68,7 @@ namespace CarWinForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var addAuto = new AddClientForm(dgvAutoes);
+            var addAuto = new AddAutoForm(int.Parse(lblClientID.Text), dgvAutoes);//new AddClientForm(dgvAutoes);
             addAuto.Show();
         }
     }

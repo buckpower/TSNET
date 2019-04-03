@@ -1,4 +1,5 @@
-﻿using CarServiceManager.Managers;
+﻿using CarServiceManager.Entities;
+using CarServiceManager.Managers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,7 +45,12 @@ namespace CarWinForm
         {
             if (e.ColumnIndex == 0)
             {
-                MessageBox.Show((e.RowIndex + 1) + "  Row  " + (e.ColumnIndex + 1) + "  Column button clicked ");
+                //MessageBox.Show((e.RowIndex + 1) + "  Row  " + (e.ColumnIndex + 1) + "  Column button clicked ");
+                var clientList = dgvClientList.DataSource as List<ClientDTO>;
+                var clientId = clientList[e.RowIndex].Id;
+                
+                var clientForm = new ClientForm(clientId);
+                clientForm.Show();
             }
         }
     }

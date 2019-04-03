@@ -26,6 +26,9 @@ namespace CarService
             modelBuilder.Entity<Comanda>()
                 .HasOptional(f => f.DetaliuComanda)
                 .WithRequired(s => s.Comanda);
+
+            modelBuilder.Entity<Auto>()
+                .HasRequired<Client>(a => a.Client);
         }
     
         public virtual DbSet<Client> Clients { get; set; }

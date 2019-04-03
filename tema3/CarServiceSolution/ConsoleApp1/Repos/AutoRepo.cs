@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 
@@ -10,6 +11,9 @@ namespace CarService.Repos
         {
             using (var context = new Model1Container())
             {
+                var client = context.Clients.First(c => c.Id == entity.Client.Id);
+                entity.Client = client;
+                //entity.ClientId = client.Id;
                 context.Autoes.Add(entity);
                 context.SaveChanges();
             }
@@ -37,7 +41,14 @@ namespace CarService.Repos
         {
             using (var context = new Model1Container())
             {
-                var found = context.Autoes.Where(x => x.Client.Id == clientId);
+                if (context.Autoes.Count() == 0)
+                {
+                    return new List<Auto>();
+                }
+
+                var found = context.Autoes.Where(x => x.Client.Id == clientId)
+                    .Include(c => c.Client)
+                    .Include(c => c.Sasiu);
                 return found.ToList();
             }
         }
@@ -46,7 +57,8 @@ namespace CarService.Repos
         {
             using (var context = new Model1Container())
             {
-                var foundList = context.Autoes;
+                var foundList = context.Autoes.Include(c => c.Client)
+                    .Include(c => c.Sasiu); ;
                 return foundList.ToList();
             }
         }

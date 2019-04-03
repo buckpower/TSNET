@@ -104,7 +104,7 @@
     <Property Name="AutoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NumarAuto" Type="nvarchar(max)" Nullable="false" />
     <Property Name="SerieSasiu" Type="nvarchar" Nullable="false" MaxLength="25" />
-    <Property Name="Client_Id" Type="int" Nullable="false" />
+    <Property Name="ClientId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Materials">
     <Key>
@@ -147,7 +147,7 @@
     <Property Name="KmBord" Type="int" Nullable="false" />
     <Property Name="Descriere" Type="nvarchar" Nullable="false" MaxLength="1024" />
     <Property Name="ValoarePiese" Type="decimal" Nullable="false" />
-    <Property Name="Client_Id" Type="int" Nullable="false" />
+    <Property Name="ClientId" Type="int" Nullable="false" />
     <Property Name="Auto_AutoId" Type="int" Nullable="false" />
     <Property Name="DetaliuComanda_Id" Type="int" Nullable="false" />
   </EntityType>
@@ -201,7 +201,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Comanda">
-        <PropertyRef Name="Client_Id" />
+        <PropertyRef Name="ClientId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -249,7 +249,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Auto">
-        <PropertyRef Name="Client_Id" />
+        <PropertyRef Name="ClientId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -466,11 +466,11 @@
           <NavigationProperty Name="DetaliuComanda" Relationship="Model1.ComandaDetaliuComanda" FromRole="Comanda" ToRole="DetaliuComanda" />
         </EntityType>
         <Association Name="ComandaClient">
-          <End Type="Model1.Comanda" Role="Comanda" Multiplicity="1" />
+          <End Type="Model1.Comanda" Role="Comanda" Multiplicity="0..1" />
           <End Type="Model1.Client" Role="Client" Multiplicity="1" />
         </Association>
         <Association Name="ComandaAuto">
-          <End Type="Model1.Comanda" Multiplicity="1" Role="Comanda" />
+          <End Type="Model1.Comanda" Multiplicity="0..1" Role="Comanda" />
           <End Type="Model1.Auto" Multiplicity="1" Role="Auto" />
         </Association>
         <EnumType Name="StareComanda" IsFlags="true">
@@ -621,11 +621,12 @@
     </AssociationSetMapping>
     <AssociationSetMapping Name="ComandaClient" TypeName="Model1.ComandaClient" StoreEntitySet="Comandas">
       <EndProperty Name="Client">
-        <ScalarProperty Name="Id" ColumnName="Client_Id" />
+        <ScalarProperty Name="Id" ColumnName="ClientId" />
       </EndProperty>
       <EndProperty Name="Comanda">
         <ScalarProperty Name="ComandaID" ColumnName="ComandaID" />
       </EndProperty>
+            <Condition ColumnName="ClientId" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="ComandaAuto" TypeName="Model1.ComandaAuto" StoreEntitySet="Comandas">
       <EndProperty Name="Auto">
@@ -634,6 +635,7 @@
       <EndProperty Name="Comanda">
         <ScalarProperty Name="ComandaID" ColumnName="ComandaID" />
       </EndProperty>
+            <Condition ColumnName="Auto_AutoId" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="DetaliuComandaMecanic" TypeName="Model1.DetaliuComandaMecanic" StoreEntitySet="DetaliuComandaMecanic">
       <EndProperty Name="DetaliuComanda">
@@ -678,7 +680,7 @@
     </AssociationSetMapping>
     <AssociationSetMapping Name="ClientAuto" TypeName="Model1.ClientAuto" StoreEntitySet="Autoes">
       <EndProperty Name="Client">
-        <ScalarProperty Name="Id" ColumnName="Client_Id" />
+        <ScalarProperty Name="Id" ColumnName="ClientId" />
       </EndProperty>
       <EndProperty Name="Auto">
         <ScalarProperty Name="AutoId" ColumnName="AutoId" />

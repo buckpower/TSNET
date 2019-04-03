@@ -704,6 +704,26 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
+      <Diagram DiagramId="a0443a1e939d4d7398f32cc2dcf55013" Name="Diagram1">
+        <EntityTypeShape EntityType="Model1.Client" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Sasiu" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Mecanic" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Auto" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Material" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Imagine" Width="1.5" PointX="5.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Operatie" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Comanda" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.DetaliuComanda" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="Model1.AutoSasiu" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.ComandaClient" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.ComandaAuto" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.DetaliuComandaMecanic" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.DetaliuComandaMaterial" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.ComandaOperatie" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.DetaliuComandaImagine" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.ComandaDetaliuComanda" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.ClientAuto" ManuallyRouted="false" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

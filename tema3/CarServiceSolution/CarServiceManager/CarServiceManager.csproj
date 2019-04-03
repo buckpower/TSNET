@@ -47,6 +47,7 @@
     <Compile Include="Entities\SasiuDTO.cs" />
     <Compile Include="Managers\AutoManager.cs" />
     <Compile Include="Managers\ClientManager.cs" />
+    <Compile Include="Managers\OrderManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

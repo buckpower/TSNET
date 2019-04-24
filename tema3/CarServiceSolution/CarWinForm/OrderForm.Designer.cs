@@ -36,9 +36,9 @@
             this.lblOrderStatus = new System.Windows.Forms.Label();
             this.cbxOrderStatus = new System.Windows.Forms.ComboBox();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbxDescription = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpAppointmentDate = new System.Windows.Forms.DateTimePicker();
             this.pbxAuto = new System.Windows.Forms.PictureBox();
             this.imgList = new System.Windows.Forms.ImageList(this.components);
             this.btnUploadImg = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@
             this.btnImgNxt = new System.Windows.Forms.Button();
             this.cbxLeft = new System.Windows.Forms.CheckBox();
             this.lblKm = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxKm = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAuto)).BeginInit();
@@ -114,13 +114,13 @@
             this.lblDescription.TabIndex = 6;
             this.lblDescription.Text = "Description:";
             // 
-            // richTextBox1
+            // rtbxDescription
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 64);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(428, 163);
-            this.richTextBox1.TabIndex = 7;
-            this.richTextBox1.Text = "";
+            this.rtbxDescription.Location = new System.Drawing.Point(12, 64);
+            this.rtbxDescription.Name = "rtbxDescription";
+            this.rtbxDescription.Size = new System.Drawing.Size(428, 163);
+            this.rtbxDescription.TabIndex = 7;
+            this.rtbxDescription.Text = "";
             // 
             // label3
             // 
@@ -131,12 +131,12 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Appointment Date:";
             // 
-            // dateTimePicker1
+            // dtpAppointmentDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(110, 252);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dtpAppointmentDate.Location = new System.Drawing.Point(110, 252);
+            this.dtpAppointmentDate.Name = "dtpAppointmentDate";
+            this.dtpAppointmentDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpAppointmentDate.TabIndex = 9;
             // 
             // pbxAuto
             // 
@@ -198,12 +198,12 @@
             this.lblKm.TabIndex = 16;
             this.lblKm.Text = "Dashboard Km:";
             // 
-            // textBox1
+            // tbxKm
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 289);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 17;
+            this.tbxKm.Location = new System.Drawing.Point(108, 289);
+            this.tbxKm.Name = "tbxKm";
+            this.tbxKm.Size = new System.Drawing.Size(100, 20);
+            this.tbxKm.TabIndex = 17;
             // 
             // btnSave
             // 
@@ -213,6 +213,7 @@
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "Save Order";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -222,6 +223,7 @@
             this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // OrderForm
             // 
@@ -230,16 +232,16 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbxKm);
             this.Controls.Add(this.lblKm);
             this.Controls.Add(this.cbxLeft);
             this.Controls.Add(this.btnImgNxt);
             this.Controls.Add(this.btnImgPrev);
             this.Controls.Add(this.btnUploadImg);
             this.Controls.Add(this.pbxAuto);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpAppointmentDate);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtbxDescription);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.cbxOrderStatus);
             this.Controls.Add(this.lblOrderStatus);
@@ -264,9 +266,9 @@
         private System.Windows.Forms.Label lblOrderStatus;
         private System.Windows.Forms.ComboBox cbxOrderStatus;
         private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbxDescription;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpAppointmentDate;
         private System.Windows.Forms.PictureBox pbxAuto;
         private System.Windows.Forms.ImageList imgList;
         private System.Windows.Forms.Button btnUploadImg;
@@ -274,7 +276,7 @@
         private System.Windows.Forms.Button btnImgNxt;
         private System.Windows.Forms.CheckBox cbxLeft;
         private System.Windows.Forms.Label lblKm;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxKm;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
     }

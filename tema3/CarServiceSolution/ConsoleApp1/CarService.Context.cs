@@ -22,13 +22,8 @@ namespace CarService
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Comanda>().HasRequired(x => x.Client);
             //throw new UnintentionalCodeFirstException();
-            modelBuilder.Entity<Comanda>()
-                .HasOptional(f => f.DetaliuComanda)
-                .WithRequired(s => s.Comanda);
-
-            modelBuilder.Entity<Auto>()
-                .HasRequired<Client>(a => a.Client);
         }
     
         public virtual DbSet<Client> Clients { get; set; }

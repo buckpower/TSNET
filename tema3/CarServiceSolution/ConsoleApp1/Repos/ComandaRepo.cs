@@ -10,6 +10,7 @@ namespace CarService.Repos
         {
             using (var context = new Model1Container())
             {
+                //entity.Client = null;
                 context.Comandas.Add(entity);
                 context.SaveChanges();
             }
@@ -90,6 +91,15 @@ namespace CarService.Repos
                 }
 
                 return dbList.ToList();
+            }
+        }
+
+        public ICollection<Comanda> GetByClientId(int clientId)
+        {
+            using (var context = new Model1Container())
+            {
+                var found = context.Comandas.Where(x => x.Client.Id == clientId);
+                return found.ToList();
             }
         }
     }

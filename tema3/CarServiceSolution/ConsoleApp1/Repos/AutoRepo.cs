@@ -33,6 +33,15 @@ namespace CarService.Repos
             using (var context = new Model1Container())
             {
                 var found = context.Autoes.FirstOrDefault(x => x.AutoId == id);
+                if (found.Client == null)
+                {
+                    found.Client = context.Clients.SingleOrDefault(c => c.Id == found.ClientId);
+                }
+                //Sasiu
+                if (found.Sasiu == null)
+                {
+                    //found.Sasiu = context.Sasius.SingleOrDefault(c => c.SasiuId == found.sa);
+                }
                 return found;
             }
         }

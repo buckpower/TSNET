@@ -44,10 +44,22 @@
   <ItemGroup>
     <Compile Include="Entities\AutoDTO.cs" />
     <Compile Include="Entities\ClientDTO.cs" />
+    <Compile Include="Entities\ComandaDto.cs" />
+    <Compile Include="Entities\DetaliuComandaDTO.cs" />
+    <Compile Include="Entities\ImagineDTO.cs" />
+    <Compile Include="Entities\MaterialDTO.cs" />
+    <Compile Include="Entities\MecanicDTO.cs" />
+    <Compile Include="Entities\OperatieDTO.cs" />
     <Compile Include="Entities\SasiuDTO.cs" />
     <Compile Include="Managers\AutoManager.cs" />
     <Compile Include="Managers\ClientManager.cs" />
+    <Compile Include="Managers\DetaliuComandaManager.cs" />
+    <Compile Include="Managers\ImagesManager.cs" />
+    <Compile Include="Managers\MaterialsManager.cs" />
+    <Compile Include="Managers\MecanicsManager.cs" />
+    <Compile Include="Managers\OperatieManager.cs" />
     <Compile Include="Managers\OrderManager.cs" />
+    <Compile Include="Managers\SasiuManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

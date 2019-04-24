@@ -19,6 +19,13 @@ namespace CarWinForm
             InitializeComponent();
             _clientManager = new ClientManager();
             _autoManager = new AutoManager();
+
+            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            dgvAutoes.Columns.Add(btn);
+            btn.HeaderText = "View Car Orders";
+            btn.Text = "Orders";
+            btn.Name = "btnOrders";
+            btn.UseColumnTextForButtonValue = true;
         }
 
         public ClientForm(int clientId) : this()
@@ -70,6 +77,22 @@ namespace CarWinForm
         {
             var addAuto = new AddAutoForm(int.Parse(lblClientID.Text), dgvAutoes);//new AddClientForm(dgvAutoes);
             addAuto.Show();
+        }
+
+        private void dgvAutoes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                //MessageBox.Show((e.RowIndex + 1) + "  Row  " + (e.ColumnIndex + 1) + "  Column button clicked ");
+                var autoDTOList = dgvAutoes.DataSource as List<AutoGridView>;
+
+                if (autoDTOList != null && autoDTOList.Count > 0)
+                {
+                    var autoDTOId = autoDTOList[e.RowIndex].AutoId;
+                    var orderForm = new Orders(autoDTOId);
+                    orderForm.Show();
+                }
+            }
         }
     }
 }

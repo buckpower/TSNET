@@ -11,6 +11,7 @@ namespace CarServiceManager.Entities
         public virtual SasiuDTO Sasiu { get; set; }
         //public virtual ClientDTO Client { get; set; }
         public int ClientId { get; set; }
+        public ClientDTO Client { get; set; }
 
         public AutoDTO() { }
         internal AutoDTO(Auto auto)
@@ -19,8 +20,13 @@ namespace CarServiceManager.Entities
             ClientId = auto.Client.Id;
             AutoId = auto.AutoId;
             NumarAuto = auto.NumarAuto;
-            Sasiu = new SasiuDTO(auto.Sasiu);
+            if (auto.Sasiu != null)
+                Sasiu = new SasiuDTO(auto.Sasiu);
+
             SerieSasiu = auto.SerieSasiu;
+
+            if(auto.Client != null)
+                Client = new ClientDTO(auto.Client);
         }
 
     }

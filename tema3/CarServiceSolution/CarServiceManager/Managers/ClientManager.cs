@@ -34,7 +34,7 @@ namespace CarServiceManager.Managers
             return clients;
         }
 
-        private Client ToClientEntity(ClientDTO dto)
+        internal static Client ToClientEntity(ClientDTO dto)
         {
             return new Client()
             {

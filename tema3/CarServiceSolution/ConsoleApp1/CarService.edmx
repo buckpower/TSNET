@@ -105,6 +105,7 @@
     <Property Name="NumarAuto" Type="nvarchar(max)" Nullable="false" />
     <Property Name="SerieSasiu" Type="nvarchar" Nullable="false" MaxLength="25" />
     <Property Name="ClientId" Type="int" Nullable="false" />
+    <Property Name="Client_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Materials">
     <Key>
@@ -147,7 +148,7 @@
     <Property Name="KmBord" Type="int" Nullable="false" />
     <Property Name="Descriere" Type="nvarchar" Nullable="false" MaxLength="1024" />
     <Property Name="ValoarePiese" Type="decimal" Nullable="false" />
-    <Property Name="ClientId" Type="int" Nullable="false" />
+    <Property Name="Client_Id" Type="int" Nullable="false" />
     <Property Name="Auto_AutoId" Type="int" Nullable="false" />
     <Property Name="DetaliuComanda_Id" Type="int" Nullable="false" />
   </EntityType>
@@ -201,7 +202,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Comanda">
-        <PropertyRef Name="ClientId" />
+        <PropertyRef Name="Client_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -249,7 +250,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Auto">
-        <PropertyRef Name="ClientId" />
+        <PropertyRef Name="Client_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -414,6 +415,7 @@
           <Property Name="SerieSasiu" Type="String" Nullable="false" MaxLength="25" />
           <NavigationProperty Name="Sasiu" Relationship="Model1.AutoSasiu" FromRole="Auto" ToRole="Sasiu" />
           <NavigationProperty Name="Client" Relationship="Model1.ClientAuto" FromRole="Auto" ToRole="Client" />
+          <Property Name="ClientId" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="AutoSasiu">
           <End Type="Model1.Auto" Role="Auto" Multiplicity="1" />
@@ -466,7 +468,7 @@
           <NavigationProperty Name="DetaliuComanda" Relationship="Model1.ComandaDetaliuComanda" FromRole="Comanda" ToRole="DetaliuComanda" />
         </EntityType>
         <Association Name="ComandaClient">
-          <End Type="Model1.Comanda" Role="Comanda" Multiplicity="0..1" />
+          <End Type="Model1.Comanda" Role="Comanda" Multiplicity="*" />
           <End Type="Model1.Client" Role="Client" Multiplicity="1" />
         </Association>
         <Association Name="ComandaAuto">
@@ -556,6 +558,7 @@
           <ScalarProperty Name="AutoId" ColumnName="AutoId" />
           <ScalarProperty Name="NumarAuto" ColumnName="NumarAuto" />
           <ScalarProperty Name="SerieSasiu" ColumnName="SerieSasiu" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -621,12 +624,11 @@
     </AssociationSetMapping>
     <AssociationSetMapping Name="ComandaClient" TypeName="Model1.ComandaClient" StoreEntitySet="Comandas">
       <EndProperty Name="Client">
-        <ScalarProperty Name="Id" ColumnName="ClientId" />
+        <ScalarProperty Name="Id" ColumnName="Client_Id" />
       </EndProperty>
       <EndProperty Name="Comanda">
         <ScalarProperty Name="ComandaID" ColumnName="ComandaID" />
       </EndProperty>
-            <Condition ColumnName="ClientId" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="ComandaAuto" TypeName="Model1.ComandaAuto" StoreEntitySet="Comandas">
       <EndProperty Name="Auto">
@@ -635,7 +637,6 @@
       <EndProperty Name="Comanda">
         <ScalarProperty Name="ComandaID" ColumnName="ComandaID" />
       </EndProperty>
-            <Condition ColumnName="Auto_AutoId" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="DetaliuComandaMecanic" TypeName="Model1.DetaliuComandaMecanic" StoreEntitySet="DetaliuComandaMecanic">
       <EndProperty Name="DetaliuComanda">
@@ -680,7 +681,7 @@
     </AssociationSetMapping>
     <AssociationSetMapping Name="ClientAuto" TypeName="Model1.ClientAuto" StoreEntitySet="Autoes">
       <EndProperty Name="Client">
-        <ScalarProperty Name="Id" ColumnName="ClientId" />
+        <ScalarProperty Name="Id" ColumnName="Client_Id" />
       </EndProperty>
       <EndProperty Name="Auto">
         <ScalarProperty Name="AutoId" ColumnName="AutoId" />

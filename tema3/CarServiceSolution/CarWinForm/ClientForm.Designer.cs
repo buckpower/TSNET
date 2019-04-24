@@ -60,6 +60,7 @@
             this.dgvAutoes.ReadOnly = true;
             this.dgvAutoes.Size = new System.Drawing.Size(428, 397);
             this.dgvAutoes.TabIndex = 0;
+            this.dgvAutoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAutoes_CellContentClick);
             // 
             // button1
             // 

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using CarService;
 using CarService.Repos;
 using CarServiceManager.Entities;
+using CarServiceManager.Managers;
 
 namespace CarServiceManager
 {
@@ -44,6 +46,25 @@ namespace CarServiceManager
         {
             var a = _repo.GetAll(); //.Select(x => new AutoDTO(x)).ToList();
             return a.Select(x => new AutoDTO(x)).ToList();
+        }
+
+        public AutoDTO GetAuto(int autoId)
+        {
+            var a = _repo.Get(autoId);
+            return new AutoDTO(a);
+        }
+
+        internal static Auto DtoToEntity(AutoDTO dto)
+        {
+            return new Auto()
+            {
+                Client = ClientManager.ToClientEntity(dto.Client),
+                Sasiu = SasiuManager.DtoToEntity(dto.Sasiu),
+                SerieSasiu = dto.SerieSasiu,
+                NumarAuto = dto.NumarAuto,
+                ClientId = dto.ClientId,
+                AutoId = dto.AutoId
+            };
         }
     }
 }

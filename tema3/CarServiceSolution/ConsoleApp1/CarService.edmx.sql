@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/03/2019 03:03:16
+-- Date Created: 04/24/2019 04:46:32
 -- Generated from EDMX file: C:\Users\cristian\Desktop\TNET\Git\TSNET\tema3\CarServiceSolution\ConsoleApp1\CarService.edmx
 -- --------------------------------------------------
 
@@ -134,7 +134,8 @@ CREATE TABLE [dbo].[Autoes] (
     [AutoId] int IDENTITY(1,1) NOT NULL,
     [NumarAuto] nvarchar(max)  NOT NULL,
     [SerieSasiu] nvarchar(25)  NOT NULL,
-    [ClientId] int  NOT NULL
+    [ClientId] int  NOT NULL,
+    [Client_Id] int  NOT NULL
 );
 GO
 
@@ -177,7 +178,7 @@ CREATE TABLE [dbo].[Comandas] (
     [KmBord] int  NOT NULL,
     [Descriere] nvarchar(1024)  NOT NULL,
     [ValoarePiese] decimal(18,0)  NOT NULL,
-    [ClientId] int  NOT NULL,
+    [Client_Id] int  NOT NULL,
     [Auto_AutoId] int  NOT NULL,
     [DetaliuComanda_Id] int  NOT NULL
 );
@@ -305,10 +306,10 @@ ON [dbo].[Sasius]
     ([AutoSasiu_Sasiu_AutoId]);
 GO
 
--- Creating foreign key on [ClientId] in table 'Comandas'
+-- Creating foreign key on [Client_Id] in table 'Comandas'
 ALTER TABLE [dbo].[Comandas]
 ADD CONSTRAINT [FK_ComandaClient]
-    FOREIGN KEY ([ClientId])
+    FOREIGN KEY ([Client_Id])
     REFERENCES [dbo].[Clients]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -317,7 +318,7 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_ComandaClient'
 CREATE INDEX [IX_FK_ComandaClient]
 ON [dbo].[Comandas]
-    ([ClientId]);
+    ([Client_Id]);
 GO
 
 -- Creating foreign key on [Auto_AutoId] in table 'Comandas'
@@ -437,10 +438,10 @@ ON [dbo].[Comandas]
     ([DetaliuComanda_Id]);
 GO
 
--- Creating foreign key on [ClientId] in table 'Autoes'
+-- Creating foreign key on [Client_Id] in table 'Autoes'
 ALTER TABLE [dbo].[Autoes]
 ADD CONSTRAINT [FK_ClientAuto]
-    FOREIGN KEY ([ClientId])
+    FOREIGN KEY ([Client_Id])
     REFERENCES [dbo].[Clients]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -449,7 +450,7 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_ClientAuto'
 CREATE INDEX [IX_FK_ClientAuto]
 ON [dbo].[Autoes]
-    ([ClientId]);
+    ([Client_Id]);
 GO
 
 -- --------------------------------------------------

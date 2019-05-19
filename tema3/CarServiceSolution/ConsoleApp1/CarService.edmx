@@ -330,7 +330,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
-        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="false">
           <EntitySet Name="Clients" EntityType="Model1.Client" />
           <EntitySet Name="Sasius" EntityType="Model1.Sasiu" />
           <EntitySet Name="Mecanics" EntityType="Model1.Mecanic" />
@@ -472,7 +472,7 @@
           <End Type="Model1.Client" Role="Client" Multiplicity="1" />
         </Association>
         <Association Name="ComandaAuto">
-          <End Type="Model1.Comanda" Multiplicity="0..1" Role="Comanda" />
+          <End Type="Model1.Comanda" Multiplicity="*" Role="Comanda" />
           <End Type="Model1.Auto" Multiplicity="1" Role="Auto" />
         </Association>
         <EnumType Name="StareComanda" IsFlags="true">

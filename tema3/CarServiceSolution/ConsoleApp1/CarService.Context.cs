@@ -20,12 +20,12 @@ namespace CarService
         {
             this.Configuration.LazyLoadingEnabled = false;
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Comanda>().HasRequired(x => x.Client);
-            //throw new UnintentionalCodeFirstException();
-            modelBuilder.Entity<Comanda>().HasRequired(x => x.Auto);
+    	            modelBuilder.Entity<Comanda>().HasRequired(x => x.Client);
+                //throw new UnintentionalCodeFirstException();
+                modelBuilder.Entity<Comanda>().HasRequired(x => x.Auto);
         }
     
         public virtual DbSet<Client> Clients { get; set; }

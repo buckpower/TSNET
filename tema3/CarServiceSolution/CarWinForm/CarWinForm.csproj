@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="PresentationEntites\AutoGridView.cs" />
     <Compile Include="PresentationEntites\ClientGridView.cs" />
+    <Compile Include="PresentationEntites\OrderGridView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddAutoForm.resx">

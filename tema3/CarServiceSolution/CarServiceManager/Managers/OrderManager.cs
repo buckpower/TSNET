@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using CarService;
@@ -22,8 +23,15 @@ namespace CarServiceManager.Managers
         {
             //var lst = 
             var dataList = _repo.GetByAutoId(autoID);
-            var dtoList = dataList.Select(x => new ComandaDto(x));
-            return dtoList.ToList();
+            //var dtoList = dataList.Select(x => new ComandaDto(x));
+            //return dtoList.ToList();
+            var dtoList = new List<ComandaDto>();
+            foreach (var comanda in dataList)
+            {
+                dtoList.Add(new ComandaDto(comanda));
+            }
+
+            return dtoList;
         }
 
         public void AddNewOrder(AutoDTO auto, StareComandaDto sc, string description, DateTime appDateTime,

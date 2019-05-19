@@ -32,7 +32,7 @@ namespace CarService.Repos
         {
             using (var context = new Model1Container())
             {
-                var found = context.Autoes.FirstOrDefault(x => x.AutoId == id);
+                var found = context.Autoes.Include(a => a.Client).Include(a => a.Sasiu).FirstOrDefault(x => x.AutoId == id);
                 if (found.Client == null)
                 {
                     found.Client = context.Clients.SingleOrDefault(c => c.Id == found.ClientId);

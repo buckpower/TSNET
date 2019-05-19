@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
 
@@ -11,6 +12,18 @@ namespace CarService.Repos
             using (var context = new Model1Container())
             {
                 //entity.Client = null;
+                //Get client
+                var client = context.Clients.FirstOrDefault(c => c.Id == entity.Client.Id);
+                var auto = context.Autoes.FirstOrDefault(a => a.AutoId == entity.Auto.AutoId);
+
+                entity.Client = client;
+                entity.Auto = auto;
+
+                entity.DAtaSystem = entity.DAtaSystem == null ? DateTime.Now : entity.DAtaSystem;
+                entity.DataProgramare = entity.DataProgramare == null ? DateTime.Now : entity.DataProgramare;
+
+                //Get auto
+
                 context.Comandas.Add(entity);
                 context.SaveChanges();
             }

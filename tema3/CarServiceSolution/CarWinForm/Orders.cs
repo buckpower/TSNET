@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CarServiceManager.Managers;
+using CarWinForm.PresentationEntites;
 
 namespace CarWinForm
 {
@@ -28,7 +29,18 @@ namespace CarWinForm
             //get orders
             _autoId = autoId;
             var autoOrders = _orderManager.GetOrderByAuto(autoId);
-            dgvOrders.DataSource = autoOrders;
+            var orderGridViewList = autoOrders.Select(a => new OrderGridView()
+            {
+                ComandaID = a.ComandaID,
+                Descriere = a.Descriere,
+                StareComanda = a.StareComanda,
+                DataSystem = a.DAtaSystem,
+                DataProgramare = a.DataProgramare,
+                KmBord = a.KmBord,
+                ValoarePiese = a.ValoarePiese,
+                DataFinalizare = a.DataFinalizare
+            }).ToList();
+            dgvOrders.DataSource = orderGridViewList;
         }
 
         private void btnAddOrder_Click(object sender, EventArgs e)

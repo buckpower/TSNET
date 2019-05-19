@@ -49,7 +49,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(589, 137);
+            this.button2.Location = new System.Drawing.Point(152, 339);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 41;
@@ -59,7 +59,7 @@
             // lblSasiuDenumire
             // 
             this.lblSasiuDenumire.AutoSize = true;
-            this.lblSasiuDenumire.Location = new System.Drawing.Point(570, 90);
+            this.lblSasiuDenumire.Location = new System.Drawing.Point(96, 391);
             this.lblSasiuDenumire.Name = "lblSasiuDenumire";
             this.lblSasiuDenumire.Size = new System.Drawing.Size(27, 13);
             this.lblSasiuDenumire.TabIndex = 39;
@@ -68,7 +68,7 @@
             // lblSasiuCod
             // 
             this.lblSasiuCod.AutoSize = true;
-            this.lblSasiuCod.Location = new System.Drawing.Point(570, 64);
+            this.lblSasiuCod.Location = new System.Drawing.Point(96, 365);
             this.lblSasiuCod.Name = "lblSasiuCod";
             this.lblSasiuCod.Size = new System.Drawing.Size(27, 13);
             this.lblSasiuCod.TabIndex = 38;
@@ -77,7 +77,7 @@
             // lblSasiuSerie
             // 
             this.lblSasiuSerie.AutoSize = true;
-            this.lblSasiuSerie.Location = new System.Drawing.Point(570, 38);
+            this.lblSasiuSerie.Location = new System.Drawing.Point(96, 339);
             this.lblSasiuSerie.Name = "lblSasiuSerie";
             this.lblSasiuSerie.Size = new System.Drawing.Size(27, 13);
             this.lblSasiuSerie.TabIndex = 37;
@@ -86,7 +86,7 @@
             // lblNumarId
             // 
             this.lblNumarId.AutoSize = true;
-            this.lblNumarId.Location = new System.Drawing.Point(570, 12);
+            this.lblNumarId.Location = new System.Drawing.Point(96, 313);
             this.lblNumarId.Name = "lblNumarId";
             this.lblNumarId.Size = new System.Drawing.Size(27, 13);
             this.lblNumarId.TabIndex = 36;
@@ -95,7 +95,7 @@
             // lblAutoId
             // 
             this.lblAutoId.AutoSize = true;
-            this.lblAutoId.Location = new System.Drawing.Point(730, 420);
+            this.lblAutoId.Location = new System.Drawing.Point(256, 428);
             this.lblAutoId.Name = "lblAutoId";
             this.lblAutoId.Size = new System.Drawing.Size(27, 13);
             this.lblAutoId.TabIndex = 35;
@@ -104,7 +104,7 @@
             // lblClientId
             // 
             this.lblClientId.AutoSize = true;
-            this.lblClientId.Location = new System.Drawing.Point(570, 420);
+            this.lblClientId.Location = new System.Drawing.Point(96, 428);
             this.lblClientId.Name = "lblClientId";
             this.lblClientId.Size = new System.Drawing.Size(27, 13);
             this.lblClientId.TabIndex = 34;
@@ -113,7 +113,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(486, 90);
+            this.label11.Location = new System.Drawing.Point(12, 391);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(87, 13);
             this.label11.TabIndex = 32;
@@ -122,7 +122,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(486, 64);
+            this.label8.Location = new System.Drawing.Point(12, 365);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 13);
             this.label8.TabIndex = 31;
@@ -131,7 +131,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(486, 38);
+            this.label7.Location = new System.Drawing.Point(12, 339);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 13);
             this.label7.TabIndex = 30;
@@ -140,7 +140,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(486, 12);
+            this.label5.Location = new System.Drawing.Point(12, 313);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 29;
@@ -149,7 +149,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(657, 420);
+            this.label3.Location = new System.Drawing.Point(183, 428);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 28;
@@ -158,7 +158,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(486, 420);
+            this.label1.Location = new System.Drawing.Point(12, 428);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 27;
@@ -166,9 +166,9 @@
             // 
             // btnAddOrder
             // 
-            this.btnAddOrder.Location = new System.Drawing.Point(12, 415);
+            this.btnAddOrder.Location = new System.Drawing.Point(632, 329);
             this.btnAddOrder.Name = "btnAddOrder";
-            this.btnAddOrder.Size = new System.Drawing.Size(428, 23);
+            this.btnAddOrder.Size = new System.Drawing.Size(156, 23);
             this.btnAddOrder.TabIndex = 26;
             this.btnAddOrder.Text = "Add Order";
             this.btnAddOrder.UseVisualStyleBackColor = true;
@@ -182,14 +182,14 @@
             this.dgvOrders.Location = new System.Drawing.Point(12, 12);
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.ReadOnly = true;
-            this.dgvOrders.Size = new System.Drawing.Size(428, 397);
+            this.dgvOrders.Size = new System.Drawing.Size(776, 286);
             this.dgvOrders.TabIndex = 25;
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(589, 280);
+            this.btnRefresh.Location = new System.Drawing.Point(461, 329);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.Size = new System.Drawing.Size(156, 23);
             this.btnRefresh.TabIndex = 42;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -217,7 +217,7 @@
             this.Controls.Add(this.btnAddOrder);
             this.Controls.Add(this.dgvOrders);
             this.Name = "Orders";
-            this.Text = "Orders";
+            this.Text = "Auto details";
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

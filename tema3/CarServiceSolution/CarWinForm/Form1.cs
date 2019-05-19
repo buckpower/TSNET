@@ -20,10 +20,22 @@ namespace CarWinForm
         {
             InitializeComponent();
             _manager = new ClientManager();
-            
+
+            InitControls();
+            AddListButton(dgvClientList);
+        }
+
+        private void InitControls()
+        {
+            _manager = new ClientManager();
+
             dgvClientList.DataSource = _manager.GetClients();
+        }
+
+        private void AddListButton(DataGridView dgv)
+        {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            dgvClientList.Columns.Add(btn);
+            dgv.Columns.Add(btn);
             btn.HeaderText = "View Client Data";
             btn.Text = "View";
             btn.Name = "btn";
@@ -52,6 +64,11 @@ namespace CarWinForm
                 var clientForm = new ClientForm(clientId);
                 clientForm.Show();
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            this.InitControls();
         }
     }
 }

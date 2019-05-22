@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientServiceUnitTests", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarServiceWCF", "CarServiceWCF\CarServiceWCF.csproj", "{BB1A1738-1E52-4774-900B-41E3A391DF0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarServiceWcfHost", "CarServiceWcfHost\CarServiceWcfHost.csproj", "{844654D9-3520-4667-9EF9-CCE122C537C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{BB1A1738-1E52-4774-900B-41E3A391DF0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB1A1738-1E52-4774-900B-41E3A391DF0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB1A1738-1E52-4774-900B-41E3A391DF0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{844654D9-3520-4667-9EF9-CCE122C537C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{844654D9-3520-4667-9EF9-CCE122C537C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{844654D9-3520-4667-9EF9-CCE122C537C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{844654D9-3520-4667-9EF9-CCE122C537C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,21 +8,21 @@ namespace CarServiceWCF.Contracts
     public interface InterfaceDetaliuComanda
     {
         [OperationContract]
-        void Add(DetaliuComanda entity);
+        void AddDetaliuComanda(DetaliuComanda entity);
 
         [OperationContract]
-        void Delete(DetaliuComanda entity);
+        void DeleteDetaliuComanda(DetaliuComanda entity);
 
         [OperationContract]
-        DetaliuComanda Get(int id);
+        DetaliuComanda GetDetaliuComanda(int id);
 
         [OperationContract]
-        ICollection<DetaliuComanda> GetAll();
+        ICollection<DetaliuComanda> GetAllDetaliuComanda();
 
         [OperationContract]
-        void Insert(DetaliuComanda entity);
+        void InsertDetaliuComanda(DetaliuComanda entity);
 
         [OperationContract]
-        void Update(DetaliuComanda entity);
+        void UpdateDetaliuComanda(DetaliuComanda entity);
     }
 }

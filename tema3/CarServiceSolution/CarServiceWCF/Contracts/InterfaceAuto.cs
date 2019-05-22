@@ -8,24 +8,24 @@ namespace CarServiceWCF.Contracts
     public interface InterfaceAuto
     {
         [OperationContract]
-         void Add(Auto entity);
+         void AddAuto(Auto entity);
 
         [OperationContract]
-         void Delete(Auto entity);
+         void DeleteAuto(Auto entity);
 
         [OperationContract]
-         Auto Get(int id);
+         Auto GetAuto(int id);
 
         [OperationContract]
-         ICollection<Auto> GetByClient(int clientId);
+         ICollection<Auto> GetAutoByClient(int clientId);
 
         [OperationContract]
-         ICollection<Auto> GetAll();
+         ICollection<Auto> GetAllAuto();
 
         [OperationContract]
-         void Insert(Auto entity);
+         void InsertAuto(Auto entity);
 
         [OperationContract]
-         void Update(Auto entity);
+         void UpdateAuto(Auto entity);
     }
 }

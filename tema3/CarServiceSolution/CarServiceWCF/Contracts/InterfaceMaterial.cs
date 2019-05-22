@@ -8,21 +8,21 @@ namespace CarServiceWCF.Contracts
     public interface InterfaceMaterial
     {
         [OperationContract]
-        void Add(Material entity);
+        void AddMaterial(Material entity);
 
         [OperationContract]
-        void Delete(Material entity);
+        void DeleteMaterial(Material entity);
 
         [OperationContract]
-        Material Get(int id);
+        Material GetMaterial(int id);
 
         [OperationContract]
-        ICollection<Material> GetAll();
+        ICollection<Material> GetAllMaterial();
 
         [OperationContract]
-        void Insert(Material entity);
+        void InsertMaterial(Material entity);
 
         [OperationContract]
-        void Update(Material entity);
+        void UpdateMaterial(Material entity);
     }
 }

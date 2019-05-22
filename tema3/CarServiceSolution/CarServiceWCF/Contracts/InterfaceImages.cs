@@ -8,21 +8,21 @@ namespace CarServiceWCF.Contracts
     public interface InterfaceImagine
     {
         [OperationContract]
-        void Add(Imagine entity);
+        void AddImagine(Imagine entity);
 
         [OperationContract]
-        void Delete(Imagine entity);
+        void DeleteImagine(Imagine entity);
 
         [OperationContract]
-        Imagine Get(int id);
+        Imagine GetImagine(int id);
 
         [OperationContract]
-        ICollection<Imagine> GetAll();
+        ICollection<Imagine> GetAllImagine();
 
         [OperationContract]
-        void Insert(Imagine entity);
+        void InsertImagine(Imagine entity);
 
         [OperationContract]
-        void Update(Imagine entity);
+        void UpdateImagine(Imagine entity);
     }
 }

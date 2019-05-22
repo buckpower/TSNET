@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BB1A1738-1E52-4774-900B-41E3A391DF0A}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CarServiceWCF</RootNamespace>
-    <AssemblyName>CarServiceWCF</AssemblyName>
+    <ProjectGuid>{844654D9-3520-4667-9EF9-CCE122C537C9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CarServiceWcfHost</RootNamespace>
+    <AssemblyName>CarServiceWcfHost</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,12 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.IdentityModel" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.ServiceModel.Primitives, Version=4.5.0.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ServiceModel.Primitives.4.5.3\lib\net461\System.ServiceModel.Primitives.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,31 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\InterfaceComanda.cs" />
-    <Compile Include="Contracts\InterfaceControll.cs" />
-    <Compile Include="Contracts\InterfaceMecanic.cs" />
-    <Compile Include="Contracts\InterfaceAuto.cs" />
-    <Compile Include="Contracts\InterfaceClient.cs" />
-    <Compile Include="Contracts\InterfaceDetaliuComanda.cs" />
-    <Compile Include="Contracts\InterfaceImages.cs" />
-    <Compile Include="Contracts\InterfaceMaterial.cs" />
-    <Compile Include="Contracts\InterfaceOperatie.cs" />
-    <Compile Include="Contracts\InterfaceSasiu.cs" />
-    <Compile Include="WcfControll.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CarServiceManager\CarServiceManager.csproj">
-      <Project>{439F3E24-52C0-4D78-846A-AF3F60285E8B}</Project>
-      <Name>CarServiceManager</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ConsoleApp1\CarService.csproj">
-      <Project>{B1D25D2C-BC0F-4D4F-A4F3-22881E543C9D}</Project>
-      <Name>CarService</Name>
-    </ProjectReference>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\CarServiceWCF\CarServiceWCF.csproj">
+      <Project>{BB1A1738-1E52-4774-900B-41E3A391DF0A}</Project>
+      <Name>CarServiceWCF</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

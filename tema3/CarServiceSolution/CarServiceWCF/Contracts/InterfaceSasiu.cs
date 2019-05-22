@@ -8,21 +8,21 @@ namespace CarServiceWCF.Contracts
     public interface InterfaceSasiu
     {
         [OperationContract]
-        void Add(Sasiu entity);
+        void AddSasiu(Sasiu entity);
 
         [OperationContract]
-        void Delete(Sasiu entity);
+        void DeleteSasiu(Sasiu entity);
 
         [OperationContract]
-        Sasiu Get(int id);
+        Sasiu GetSasiu(int id);
 
         [OperationContract]
-        ICollection<Sasiu> GetAll();
+        ICollection<Sasiu> GetAllSasiu();
 
         [OperationContract]
-        void Insert(Sasiu entity);
+        void InsertSasiu(Sasiu entity);
 
         [OperationContract]
-        void Update(Sasiu entity);
+        void UpdateSasiu(Sasiu entity);
     }
 }

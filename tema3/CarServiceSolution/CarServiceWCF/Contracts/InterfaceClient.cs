@@ -5,24 +5,24 @@ using System.ServiceModel;
 namespace CarServiceWCF.Contracts
 {
     [ServiceContract]
-    interface InterfaceClient
+    public interface InterfaceClient
     {
         [OperationContract]
-        void Add(Client entity);
+        void AddClient(Client entity);
 
         [OperationContract]
-          void Delete(Client entity);
+          void DeleteClient(Client entity);
 
           [OperationContract]
-          Client Get(int id);
+          Client GetClient(int id);
 
           [OperationContract]
-          ICollection<Client> GetAll();
+          ICollection<Client> GetAllClient();
 
           [OperationContract]
-          void Insert(Client entity);
+          void InsertClient(Client entity);
 
           [OperationContract]
-          void Update(Client entity);
+          void UpdateClient(Client entity);
     }
 }

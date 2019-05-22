@@ -8,21 +8,21 @@ namespace CarServiceWCF.Contracts
     public interface InterfaceMecanic
     {
         [OperationContract]
-        void Add(Mecanic entity);
+        void AddMecanic(Mecanic entity);
 
         [OperationContract]
-        void Delete(Mecanic entity);
+        void DeleteMecanic(Mecanic entity);
 
         [OperationContract]
-        Mecanic Get(int id);
+        Mecanic GetMecanic(int id);
 
         [OperationContract]
-        ICollection<Mecanic> GetAll();
+        ICollection<Mecanic> GetAllMecanic();
 
         [OperationContract]
-        void Insert(Mecanic entity);
+        void InsertMecanic(Mecanic entity);
 
         [OperationContract]
-        void Update(Mecanic entity);
+        void UpdateMecanic(Mecanic entity);
     }
 }

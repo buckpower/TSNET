@@ -11,13 +11,19 @@ namespace CarService
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Runtime.Serialization;
+
     public partial class Material
     {
+        [DataMember]
         public int MaterialId { get; set; }
+        [DataMember]
         public string Denumire { get; set; }
+        [DataMember]
         public decimal Cantitate { get; set; }
+        [DataMember]
         public decimal Pret { get; set; }
+        [DataMember]
         public System.DateTime DataAprovizionare { get; set; }
     }
 }

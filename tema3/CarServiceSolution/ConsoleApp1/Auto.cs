@@ -11,15 +11,22 @@ namespace CarService
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Runtime.Serialization;
+
     public partial class Auto
     {
+        [DataMember]
         public int AutoId { get; set; }
+        [DataMember]
         public string NumarAuto { get; set; }
+        [DataMember]
         public string SerieSasiu { get; set; }
+        [DataMember]
         public int ClientId { get; set; }
-    
+
+        [DataMember]
         public virtual Sasiu Sasiu { get; set; }
+        [DataMember]
         public virtual Client Client { get; set; }
     }
 }

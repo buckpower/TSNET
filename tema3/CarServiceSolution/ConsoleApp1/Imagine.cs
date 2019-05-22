@@ -11,15 +11,22 @@ namespace CarService
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Runtime.Serialization;
+
     public partial class Imagine
     {
+        [DataMember]
         public int ImagineId { get; set; }
+        [DataMember]
         public string Titlu { get; set; }
+        [DataMember]
         public string Descriere { get; set; }
+        [DataMember]
         public System.DateTime Data { get; set; }
+        [DataMember]
         public byte[] Foto { get; set; }
     
+        [DataMember]
         public virtual DetaliuComanda DetaliuComanda { get; set; }
     }
 }

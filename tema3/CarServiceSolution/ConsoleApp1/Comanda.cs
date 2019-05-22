@@ -11,7 +11,8 @@ namespace CarService
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Runtime.Serialization;
+
     public partial class Comanda
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,19 +21,31 @@ namespace CarService
             this.Operaties = new HashSet<Operatie>();
         }
     
+        [DataMember]
         public int ComandaID { get; set; }
+        [DataMember]
         public StareComanda StareComanda { get; set; }
+        [DataMember]
         public System.DateTime DAtaSystem { get; set; }
+        [DataMember]
         public System.DateTime DataProgramare { get; set; }
+        [DataMember]
         public Nullable<System.DateTime> DataFinalizare { get; set; }
+        [DataMember]
         public int KmBord { get; set; }
+        [DataMember]
         public string Descriere { get; set; }
+        [DataMember]
         public decimal ValoarePiese { get; set; }
     
+        [DataMember]
         public virtual Client Client { get; set; }
+        [DataMember]
         public virtual Auto Auto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [DataMember]
         public virtual ICollection<Operatie> Operaties { get; set; }
+        [DataMember]
         public virtual DetaliuComanda DetaliuComanda { get; set; }
     }
 }

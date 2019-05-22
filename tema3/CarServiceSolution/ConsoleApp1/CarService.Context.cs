@@ -19,6 +19,8 @@ namespace CarService
             : base("name=Model1Container")
         {
             this.Configuration.LazyLoadingEnabled = false;
+    	Configuration.ProxyCreationEnabled = false;
+
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

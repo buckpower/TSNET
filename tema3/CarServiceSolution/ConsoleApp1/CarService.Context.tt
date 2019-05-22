@@ -59,10 +59,12 @@ using System.Linq;
         : base("name=<#=container.Name#>")
     {
 <#
+
 if (!loader.IsLazyLoadingEnabled(container))
 {
 #>
         this.Configuration.LazyLoadingEnabled = false;
+	Configuration.ProxyCreationEnabled = false;
 <#
 }
 

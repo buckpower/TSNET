@@ -11,11 +11,15 @@ namespace CarService
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Runtime.Serialization;
+
     public partial class Mecanic
     {
+        [DataMember]
         public int MecanicId { get; set; }
+        [DataMember]
         public string Nume { get; set; }
+        [DataMember]
         public string Prenume { get; set; }
     }
 }

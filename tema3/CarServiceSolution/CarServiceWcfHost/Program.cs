@@ -15,8 +15,8 @@ namespace CarServiceWcfHost
         {
             Console.WriteLine("Lansare server WCF...");
             ServiceHost host = new ServiceHost(typeof(WcfControll),
-                new Uri("http://localhost:8000/PC"));
-            foreach (ServiceEndpoint se in host.Description.Endpoints)
+                new Uri("http://localhost:8181/PC"));
+            //foreach (ServiceEndpoint se in host.Description.Endpoints)
             host.Open();
             Console.WriteLine("Server in executie. Se asteapta conexiuni...");
             Console.WriteLine("Apasati Enter pentru a opri serverul!");

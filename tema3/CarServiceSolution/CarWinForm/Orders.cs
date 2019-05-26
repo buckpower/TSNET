@@ -53,5 +53,10 @@ namespace CarWinForm
         {
             this.Refresh();
         }
+
+        private void Orders_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

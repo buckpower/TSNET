@@ -49,7 +49,15 @@
             this.tbxKm = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.dgvMecanics = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dgvMaterials = new System.Windows.Forms.DataGridView();
+            this.btnAddMechanic = new System.Windows.Forms.Button();
+            this.btnAddMaterial = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAuto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMecanics)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterials)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -116,16 +124,16 @@
             // 
             // rtbxDescription
             // 
-            this.rtbxDescription.Location = new System.Drawing.Point(12, 64);
+            this.rtbxDescription.Location = new System.Drawing.Point(11, 64);
             this.rtbxDescription.Name = "rtbxDescription";
-            this.rtbxDescription.Size = new System.Drawing.Size(428, 163);
+            this.rtbxDescription.Size = new System.Drawing.Size(495, 110);
             this.rtbxDescription.TabIndex = 7;
             this.rtbxDescription.Text = "";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 258);
+            this.label3.Location = new System.Drawing.Point(10, 198);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 13);
             this.label3.TabIndex = 8;
@@ -133,14 +141,14 @@
             // 
             // dtpAppointmentDate
             // 
-            this.dtpAppointmentDate.Location = new System.Drawing.Point(110, 252);
+            this.dtpAppointmentDate.Location = new System.Drawing.Point(111, 192);
             this.dtpAppointmentDate.Name = "dtpAppointmentDate";
             this.dtpAppointmentDate.Size = new System.Drawing.Size(200, 20);
             this.dtpAppointmentDate.TabIndex = 9;
             // 
             // pbxAuto
             // 
-            this.pbxAuto.Location = new System.Drawing.Point(528, 64);
+            this.pbxAuto.Location = new System.Drawing.Point(319, 192);
             this.pbxAuto.Name = "pbxAuto";
             this.pbxAuto.Size = new System.Drawing.Size(187, 130);
             this.pbxAuto.TabIndex = 10;
@@ -154,7 +162,7 @@
             // 
             // btnUploadImg
             // 
-            this.btnUploadImg.Location = new System.Drawing.Point(567, 200);
+            this.btnUploadImg.Location = new System.Drawing.Point(358, 328);
             this.btnUploadImg.Name = "btnUploadImg";
             this.btnUploadImg.Size = new System.Drawing.Size(106, 23);
             this.btnUploadImg.TabIndex = 11;
@@ -163,7 +171,7 @@
             // 
             // btnImgPrev
             // 
-            this.btnImgPrev.Location = new System.Drawing.Point(493, 114);
+            this.btnImgPrev.Location = new System.Drawing.Point(319, 328);
             this.btnImgPrev.Name = "btnImgPrev";
             this.btnImgPrev.Size = new System.Drawing.Size(29, 29);
             this.btnImgPrev.TabIndex = 12;
@@ -172,7 +180,7 @@
             // 
             // btnImgNxt
             // 
-            this.btnImgNxt.Location = new System.Drawing.Point(721, 114);
+            this.btnImgNxt.Location = new System.Drawing.Point(477, 328);
             this.btnImgNxt.Name = "btnImgNxt";
             this.btnImgNxt.Size = new System.Drawing.Size(29, 29);
             this.btnImgNxt.TabIndex = 13;
@@ -182,7 +190,7 @@
             // cbxLeft
             // 
             this.cbxLeft.AutoSize = true;
-            this.cbxLeft.Location = new System.Drawing.Point(298, 289);
+            this.cbxLeft.Location = new System.Drawing.Point(16, 231);
             this.cbxLeft.Name = "cbxLeft";
             this.cbxLeft.Size = new System.Drawing.Size(142, 17);
             this.cbxLeft.TabIndex = 15;
@@ -192,7 +200,7 @@
             // lblKm
             // 
             this.lblKm.AutoSize = true;
-            this.lblKm.Location = new System.Drawing.Point(9, 292);
+            this.lblKm.Location = new System.Drawing.Point(13, 257);
             this.lblKm.Name = "lblKm";
             this.lblKm.Size = new System.Drawing.Size(80, 13);
             this.lblKm.TabIndex = 16;
@@ -200,14 +208,14 @@
             // 
             // tbxKm
             // 
-            this.tbxKm.Location = new System.Drawing.Point(108, 289);
+            this.tbxKm.Location = new System.Drawing.Point(124, 254);
             this.tbxKm.Name = "tbxKm";
             this.tbxKm.Size = new System.Drawing.Size(100, 20);
             this.tbxKm.TabIndex = 17;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(493, 402);
+            this.btnSave.Location = new System.Drawing.Point(339, 473);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 18;
@@ -217,7 +225,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(217, 402);
+            this.btnCancel.Location = new System.Drawing.Point(63, 473);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 19;
@@ -225,11 +233,69 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // dgvMecanics
+            // 
+            this.dgvMecanics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMecanics.Location = new System.Drawing.Point(548, 64);
+            this.dgvMecanics.Name = "dgvMecanics";
+            this.dgvMecanics.Size = new System.Drawing.Size(298, 150);
+            this.dgvMecanics.TabIndex = 20;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(545, 48);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Mecanic List:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(545, 261);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Material list:";
+            // 
+            // dgvMaterials
+            // 
+            this.dgvMaterials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMaterials.Location = new System.Drawing.Point(548, 277);
+            this.dgvMaterials.Name = "dgvMaterials";
+            this.dgvMaterials.Size = new System.Drawing.Size(295, 150);
+            this.dgvMaterials.TabIndex = 23;
+            // 
+            // btnAddMechanic
+            // 
+            this.btnAddMechanic.Location = new System.Drawing.Point(643, 227);
+            this.btnAddMechanic.Name = "btnAddMechanic";
+            this.btnAddMechanic.Size = new System.Drawing.Size(90, 23);
+            this.btnAddMechanic.TabIndex = 24;
+            this.btnAddMechanic.Text = "Add Mechanic";
+            this.btnAddMechanic.UseVisualStyleBackColor = true;
+            // 
+            // btnAddMaterial
+            // 
+            this.btnAddMaterial.Location = new System.Drawing.Point(643, 432);
+            this.btnAddMaterial.Name = "btnAddMaterial";
+            this.btnAddMaterial.Size = new System.Drawing.Size(90, 23);
+            this.btnAddMaterial.TabIndex = 25;
+            this.btnAddMaterial.Text = "Add Material";
+            this.btnAddMaterial.UseVisualStyleBackColor = true;
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(890, 518);
+            this.Controls.Add(this.btnAddMaterial);
+            this.Controls.Add(this.btnAddMechanic);
+            this.Controls.Add(this.dgvMaterials);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dgvMecanics);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tbxKm);
@@ -252,6 +318,8 @@
             this.Name = "OrderForm";
             this.Text = "Order Form";
             ((System.ComponentModel.ISupportInitialize)(this.pbxAuto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMecanics)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterials)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,5 +347,11 @@
         private System.Windows.Forms.TextBox tbxKm;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridView dgvMecanics;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dgvMaterials;
+        private System.Windows.Forms.Button btnAddMechanic;
+        private System.Windows.Forms.Button btnAddMaterial;
     }
 }

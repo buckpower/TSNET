@@ -217,7 +217,8 @@
             this.Controls.Add(this.btnAddOrder);
             this.Controls.Add(this.dgvOrders);
             this.Name = "Orders";
-            this.Text = "Auto details";
+            this.Text = "Auto jobs";
+            this.Load += new System.EventHandler(this.Orders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -32,6 +32,9 @@ namespace CarWinForm
             lblClientName.Text = client.Nume + " " + client.Prenume;
             lblAutoNr.Text = _autoDto.NumarAuto;
             dtpAppointmentDate.Value = DateTime.Now;
+
+            cbxOrderStatus.SelectedIndex = 0;
+            cbxOrderStatus.Enabled = false;
         }
 
         private void InitManagers()

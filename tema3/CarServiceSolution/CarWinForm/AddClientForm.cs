@@ -74,7 +74,7 @@ namespace CarWinForm
                 Email = tbClientEmail.Text
             };
             _manager.SaveClient(dto);
-            _parentDataGridView.DataSource = _manager.GetClients();
+            _parentDataGridView.DataSource = _manager.GetList();
 
             this.Close();
         }

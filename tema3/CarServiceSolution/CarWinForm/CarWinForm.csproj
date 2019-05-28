@@ -71,6 +71,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MaterialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialForm.Designer.cs">
+      <DependentUpon>MaterialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MechanicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MechanicForm.Designer.cs">
+      <DependentUpon>MechanicForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperatieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperatieForm.Designer.cs">
+      <DependentUpon>OperatieForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +117,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialForm.resx">
+      <DependentUpon>MaterialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MechanicForm.resx">
+      <DependentUpon>MechanicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperatieForm.resx">
+      <DependentUpon>OperatieForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>

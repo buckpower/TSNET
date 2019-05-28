@@ -31,21 +31,21 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.tbClientSurname = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.tbClientName = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.tbClientSurname = new System.Windows.Forms.TextBox();
             this.tbClientAddress = new System.Windows.Forms.TextBox();
             this.tbClientCity = new System.Windows.Forms.TextBox();
             this.tbClientCounty = new System.Windows.Forms.TextBox();
             this.tbClientPhone = new System.Windows.Forms.TextBox();
             this.tbClientEmail = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.tbClientName = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +66,45 @@
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Client Surname:";
+            // 
+            // tbClientSurname
+            // 
+            this.tbClientSurname.Location = new System.Drawing.Point(100, 44);
+            this.tbClientSurname.Name = "tbClientSurname";
+            this.tbClientSurname.Size = new System.Drawing.Size(121, 20);
+            this.tbClientSurname.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(216, 212);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(15, 211);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(86, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // tbClientName
+            // 
+            this.tbClientName.Location = new System.Drawing.Point(100, 21);
+            this.tbClientName.Name = "tbClientName";
+            this.tbClientName.Size = new System.Drawing.Size(121, 20);
+            this.tbClientName.TabIndex = 7;
+            this.tbClientName.Text = "\r\n";
+            this.tbClientName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // label3
             // 
@@ -112,13 +151,6 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Email";
             // 
-            // tbClientSurname
-            // 
-            this.tbClientSurname.Location = new System.Drawing.Point(100, 44);
-            this.tbClientSurname.Name = "tbClientSurname";
-            this.tbClientSurname.Size = new System.Drawing.Size(121, 20);
-            this.tbClientSurname.TabIndex = 8;
-            // 
             // tbClientAddress
             // 
             this.tbClientAddress.Location = new System.Drawing.Point(100, 68);
@@ -154,38 +186,6 @@
             this.tbClientEmail.Size = new System.Drawing.Size(121, 20);
             this.tbClientEmail.TabIndex = 13;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(216, 212);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(15, 211);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // tbClientName
-            // 
-            this.tbClientName.Location = new System.Drawing.Point(100, 21);
-            this.tbClientName.Name = "tbClientName";
-            this.tbClientName.Size = new System.Drawing.Size(121, 20);
-            this.tbClientName.TabIndex = 7;
-            this.tbClientName.Text = "\r\n";
-            this.tbClientName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // AddClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,20 +219,20 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbClientName;
         private System.Windows.Forms.TextBox tbClientSurname;
-        private System.Windows.Forms.TextBox tbClientAddress;
-        private System.Windows.Forms.TextBox tbClientCity;
-        private System.Windows.Forms.TextBox tbClientCounty;
-        private System.Windows.Forms.TextBox tbClientPhone;
-        private System.Windows.Forms.TextBox tbClientEmail;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox tbClientEmail;
+        private System.Windows.Forms.TextBox tbClientPhone;
+        private System.Windows.Forms.TextBox tbClientCounty;
+        private System.Windows.Forms.TextBox tbClientCity;
+        private System.Windows.Forms.TextBox tbClientAddress;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

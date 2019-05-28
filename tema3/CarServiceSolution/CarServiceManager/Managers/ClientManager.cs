@@ -22,7 +22,7 @@ namespace CarServiceManager.Managers
             _repo.Add(entity);
         }
 
-        public List<ClientDTO> GetClients()
+        public List<ClientDTO> GetList()
         {
             var clients = _repo.GetAll().Select(q => new ClientDTO(q)).ToList();
             return clients;

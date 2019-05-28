@@ -9,6 +9,10 @@ namespace CarServiceManager.Entities
 {
     public class MaterialDTO
     {
+        public MaterialDTO()
+        {
+
+        }
         internal MaterialDTO(Material material)
         {
             MaterialId = material.MaterialId;

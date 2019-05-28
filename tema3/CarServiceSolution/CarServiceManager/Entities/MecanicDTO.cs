@@ -4,6 +4,10 @@ namespace CarServiceManager.Entities
 {
     public class MecanicDTO
     {
+        public MecanicDTO()
+        {
+        }
+
         internal MecanicDTO(Mecanic mecanic)
         {
             MecanicId = mecanic.MecanicId;

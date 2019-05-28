@@ -3,6 +3,7 @@ using CarServiceManager.Managers;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using CarWinForm.ServiceReference1;
 
 namespace CarWinForm
 {
@@ -15,6 +16,7 @@ namespace CarWinForm
 
         public Form1()
         {
+            ServiceReference1.InterfaceControllClient pc = new InterfaceControllClient();
             InitializeComponent();
             _clientManager = new ClientManager();
 

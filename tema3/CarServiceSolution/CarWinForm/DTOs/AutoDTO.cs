@@ -1,4 +1,5 @@
-﻿using CarService;
+﻿
+using CarWinForm.ServiceReference1;
 
 namespace CarServiceManager.Entities
 {
@@ -13,7 +14,10 @@ namespace CarServiceManager.Entities
         public int ClientId { get; set; }
         public ClientDTO Client { get; set; }
 
-        public AutoDTO() { }
+        public AutoDTO()
+        {
+
+        }
         public AutoDTO(Auto auto)
         {
             //Client = new ClientDTO(auto.Client);

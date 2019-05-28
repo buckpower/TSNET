@@ -55,9 +55,13 @@
             this.dgvMaterials = new System.Windows.Forms.DataGridView();
             this.btnAddMechanic = new System.Windows.Forms.Button();
             this.btnAddMaterial = new System.Windows.Forms.Button();
+            this.btnAddOperation = new System.Windows.Forms.Button();
+            this.dgvOperations = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAuto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMecanics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterials)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOperations)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -126,7 +130,7 @@
             // 
             this.rtbxDescription.Location = new System.Drawing.Point(11, 64);
             this.rtbxDescription.Name = "rtbxDescription";
-            this.rtbxDescription.Size = new System.Drawing.Size(495, 110);
+            this.rtbxDescription.Size = new System.Drawing.Size(429, 110);
             this.rtbxDescription.TabIndex = 7;
             this.rtbxDescription.Text = "";
             // 
@@ -148,7 +152,7 @@
             // 
             // pbxAuto
             // 
-            this.pbxAuto.Location = new System.Drawing.Point(319, 192);
+            this.pbxAuto.Location = new System.Drawing.Point(21, 254);
             this.pbxAuto.Name = "pbxAuto";
             this.pbxAuto.Size = new System.Drawing.Size(187, 130);
             this.pbxAuto.TabIndex = 10;
@@ -162,7 +166,7 @@
             // 
             // btnUploadImg
             // 
-            this.btnUploadImg.Location = new System.Drawing.Point(358, 328);
+            this.btnUploadImg.Location = new System.Drawing.Point(60, 390);
             this.btnUploadImg.Name = "btnUploadImg";
             this.btnUploadImg.Size = new System.Drawing.Size(106, 23);
             this.btnUploadImg.TabIndex = 11;
@@ -171,7 +175,7 @@
             // 
             // btnImgPrev
             // 
-            this.btnImgPrev.Location = new System.Drawing.Point(319, 328);
+            this.btnImgPrev.Location = new System.Drawing.Point(21, 390);
             this.btnImgPrev.Name = "btnImgPrev";
             this.btnImgPrev.Size = new System.Drawing.Size(29, 29);
             this.btnImgPrev.TabIndex = 12;
@@ -180,7 +184,7 @@
             // 
             // btnImgNxt
             // 
-            this.btnImgNxt.Location = new System.Drawing.Point(477, 328);
+            this.btnImgNxt.Location = new System.Drawing.Point(179, 390);
             this.btnImgNxt.Name = "btnImgNxt";
             this.btnImgNxt.Size = new System.Drawing.Size(29, 29);
             this.btnImgNxt.TabIndex = 13;
@@ -200,7 +204,7 @@
             // lblKm
             // 
             this.lblKm.AutoSize = true;
-            this.lblKm.Location = new System.Drawing.Point(13, 257);
+            this.lblKm.Location = new System.Drawing.Point(344, 194);
             this.lblKm.Name = "lblKm";
             this.lblKm.Size = new System.Drawing.Size(80, 13);
             this.lblKm.TabIndex = 16;
@@ -208,14 +212,14 @@
             // 
             // tbxKm
             // 
-            this.tbxKm.Location = new System.Drawing.Point(124, 254);
+            this.tbxKm.Location = new System.Drawing.Point(455, 191);
             this.tbxKm.Name = "tbxKm";
             this.tbxKm.Size = new System.Drawing.Size(100, 20);
             this.tbxKm.TabIndex = 17;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(339, 473);
+            this.btnSave.Location = new System.Drawing.Point(792, 471);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 18;
@@ -225,7 +229,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(63, 473);
+            this.btnCancel.Location = new System.Drawing.Point(711, 471);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 19;
@@ -236,7 +240,7 @@
             // dgvMecanics
             // 
             this.dgvMecanics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMecanics.Location = new System.Drawing.Point(548, 64);
+            this.dgvMecanics.Location = new System.Drawing.Point(257, 254);
             this.dgvMecanics.Name = "dgvMecanics";
             this.dgvMecanics.Size = new System.Drawing.Size(298, 150);
             this.dgvMecanics.TabIndex = 20;
@@ -244,7 +248,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(545, 48);
+            this.label4.Location = new System.Drawing.Point(254, 238);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 21;
@@ -253,7 +257,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(545, 261);
+            this.label5.Location = new System.Drawing.Point(580, 8);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 22;
@@ -262,14 +266,14 @@
             // dgvMaterials
             // 
             this.dgvMaterials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaterials.Location = new System.Drawing.Point(548, 277);
+            this.dgvMaterials.Location = new System.Drawing.Point(583, 24);
             this.dgvMaterials.Name = "dgvMaterials";
             this.dgvMaterials.Size = new System.Drawing.Size(295, 150);
             this.dgvMaterials.TabIndex = 23;
             // 
             // btnAddMechanic
             // 
-            this.btnAddMechanic.Location = new System.Drawing.Point(643, 227);
+            this.btnAddMechanic.Location = new System.Drawing.Point(352, 417);
             this.btnAddMechanic.Name = "btnAddMechanic";
             this.btnAddMechanic.Size = new System.Drawing.Size(90, 23);
             this.btnAddMechanic.TabIndex = 24;
@@ -278,18 +282,47 @@
             // 
             // btnAddMaterial
             // 
-            this.btnAddMaterial.Location = new System.Drawing.Point(643, 432);
+            this.btnAddMaterial.Location = new System.Drawing.Point(678, 179);
             this.btnAddMaterial.Name = "btnAddMaterial";
             this.btnAddMaterial.Size = new System.Drawing.Size(90, 23);
             this.btnAddMaterial.TabIndex = 25;
             this.btnAddMaterial.Text = "Add Material";
             this.btnAddMaterial.UseVisualStyleBackColor = true;
             // 
+            // btnAddOperation
+            // 
+            this.btnAddOperation.Location = new System.Drawing.Point(678, 409);
+            this.btnAddOperation.Name = "btnAddOperation";
+            this.btnAddOperation.Size = new System.Drawing.Size(90, 23);
+            this.btnAddOperation.TabIndex = 28;
+            this.btnAddOperation.Text = "Add Operation";
+            this.btnAddOperation.UseVisualStyleBackColor = true;
+            // 
+            // dgvOperations
+            // 
+            this.dgvOperations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOperations.Location = new System.Drawing.Point(583, 254);
+            this.dgvOperations.Name = "dgvOperations";
+            this.dgvOperations.Size = new System.Drawing.Size(295, 150);
+            this.dgvOperations.TabIndex = 27;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(580, 238);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 13);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Operations list:";
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 518);
+            this.Controls.Add(this.btnAddOperation);
+            this.Controls.Add(this.dgvOperations);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnAddMaterial);
             this.Controls.Add(this.btnAddMechanic);
             this.Controls.Add(this.dgvMaterials);
@@ -320,6 +353,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxAuto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMecanics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterials)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOperations)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,5 +387,8 @@
         private System.Windows.Forms.DataGridView dgvMaterials;
         private System.Windows.Forms.Button btnAddMechanic;
         private System.Windows.Forms.Button btnAddMaterial;
+        private System.Windows.Forms.Button btnAddOperation;
+        private System.Windows.Forms.DataGridView dgvOperations;
+        private System.Windows.Forms.Label label6;
     }
 }

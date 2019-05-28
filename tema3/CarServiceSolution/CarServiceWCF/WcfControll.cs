@@ -12,15 +12,15 @@ namespace CarServiceWCF.Contracts
 {
     public class WcfControll : InterfaceControll
     { 
-        private AutoRepo _autoRepo;
-        private ClientRepo _clientRepo;
-        private ComandaRepo _comandaRepo;
-        private DetaliuComandaRepo _detaliuComandaRepo;
-        private ImagineRepo _imagesRepo;
-        private MaterialRepo _materialRepo;
-        private MecanicRepo _mecanicRepo;
-        private OperatieRepo _operatieRepo;
-        private SasiuRepo _sasiuRepo;
+        private AutoRepo _autoRepo = new AutoRepo();
+        private ClientRepo _clientRepo = new ClientRepo();
+        private ComandaRepo _comandaRepo = new ComandaRepo();
+        private DetaliuComandaRepo _detaliuComandaRepo = new DetaliuComandaRepo();
+        private ImagineRepo _imagesRepo = new ImagineRepo();
+        private MaterialRepo _materialRepo = new MaterialRepo();
+        private MecanicRepo _mecanicRepo = new MecanicRepo();
+        private OperatieRepo _operatieRepo = new OperatieRepo();
+        private SasiuRepo _sasiuRepo = new SasiuRepo();
 
         public void AddAuto(Auto entity)
         {
